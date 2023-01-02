@@ -10,5 +10,6 @@ package railreservationsystem;
  */
 import java.util.Scanner;
 public class LoginPage {
+    private int total;
     private int number;
 }
