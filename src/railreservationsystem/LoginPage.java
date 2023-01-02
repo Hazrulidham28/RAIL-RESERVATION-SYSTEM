@@ -8,7 +8,7 @@ package railreservationsystem;
  *
  * @author Hazrul Idham
  */
-import java.util.Scanner;
+
 public class LoginPage {
     private int total;
     private int number;
