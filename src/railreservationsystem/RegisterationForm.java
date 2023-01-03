@@ -1,6 +1,11 @@
 
 package railreservationsystem;
 
+import javax.swing.*;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Hazrul Idham
@@ -13,7 +18,10 @@ public class RegisterationForm extends javax.swing.JFrame {
     private String Gender;
     private String Contact;
     private String Password;
+    private boolean passData=true;
     
+    
+   
     
 
     /**
@@ -22,6 +30,7 @@ public class RegisterationForm extends javax.swing.JFrame {
     public RegisterationForm() {
         initComponents();
     }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,40 +49,60 @@ public class RegisterationForm extends javax.swing.JFrame {
         jTextContact = new javax.swing.JTextField();
         jLabelEmail = new javax.swing.JLabel();
         jLabelPass = new javax.swing.JLabel();
-        jPassword = new javax.swing.JPasswordField();
         jLabelName = new javax.swing.JLabel();
         jLabelIc = new javax.swing.JLabel();
         jLabelGender = new javax.swing.JLabel();
         jLabelContact = new javax.swing.JLabel();
         jButtonSubmit = new javax.swing.JButton();
+        jPassword = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setForeground(java.awt.Color.white);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Registeration ");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, -1, -1));
+
+        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextEmailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 58, 202, -1));
+        getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 155, 202, -1));
 
         jTextIc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIcActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 211, 202, -1));
 
         jTextGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextGenderActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 261, 202, -1));
+        getContentPane().add(jTextContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 317, 202, -1));
 
         jLabelEmail.setText("Email");
+        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 36, -1, -1));
 
         jLabelPass.setText("Password");
+        getContentPane().add(jLabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 86, -1, -1));
 
         jLabelName.setText("Name");
+        getContentPane().add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 136, -1, -1));
 
         jLabelIc.setText("Identity Card Number");
+        getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 189, -1, -1));
 
         jLabelGender.setText("Gender");
+        getContentPane().add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 239, -1, -1));
 
         jLabelContact.setText("Contact Number");
+        getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 295, -1, -1));
 
         jButtonSubmit.setText("SUBMIT");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -81,90 +110,14 @@ public class RegisterationForm extends javax.swing.JFrame {
                 jButtonSubmitActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 372, 109, 39));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(199, 199, 199)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelEmail))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelPass))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelName))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelIc))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelGender))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextGender, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jLabelContact))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jTextContact, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(321, 321, 321)
-                        .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel1)
-                .addGap(14, 14, 14)
-                .addComponent(jLabelEmail)
-                .addGap(6, 6, 6)
-                .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabelPass)
-                .addGap(6, 6, 6)
-                .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabelName)
-                .addGap(3, 3, 3)
-                .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabelIc)
-                .addGap(6, 6, 6)
-                .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jLabelGender)
-                .addGap(6, 6, 6)
-                .addComponent(jTextGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jLabelContact)
-                .addGap(6, 6, 6)
-                .addComponent(jTextContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jButtonSubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
+        jPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -186,9 +139,88 @@ public class RegisterationForm extends javax.swing.JFrame {
         Gender = jTextGender.getText();
         Contact = jTextContact.getText();
         
+        //This if else state is to give prompt message if user not give any value and will return false value
+        if(Email.equals("")){
+            JOptionPane.showMessageDialog(null,"Email is Mandatory!");
+            passData=false;
+            
+        }
+        if(Password.equals("")){
+            JOptionPane.showMessageDialog(null,"Password is Mandatory!");
+            passData=false;
+            
+        }
+        if(Name.equals("")){
+            JOptionPane.showMessageDialog(null,"Name is Mandatory!");
+            passData=false;
+            
+        }
+        if(IcNum.equals("")){
+            JOptionPane.showMessageDialog(null,"Identitiy Card Number is Mandatory!");
+            
+        }
+        if(Gender.equals("")){
+            JOptionPane.showMessageDialog(null,"Gender is Mandatory!");
+            passData=false;
+            
+        }
+        if(Contact.equals("")){
+            JOptionPane.showMessageDialog(null,"Contact is Mandatory!");
+            passData=false;
+            
+        }
+        //to save user data into user.txt
+    //this if else statement used to makesure the data in varianle is not null
+    if(passData==true){
+        
+            try {
+                //open Filewriter
+                //use true to active append mode to filewriter
+                FileWriter inFile = new FileWriter("user.txt",true);
+                PrintWriter outFile = new PrintWriter(inFile);
+                
+                outFile.print(Email+";");
+                outFile.print(Password+";");
+                outFile.print(Name+";");
+                outFile.print(IcNum+";");
+                outFile.print(Gender+";");
+                outFile.println(Contact+";");
+                outFile.println();
+                
+                
+                
+                outFile.close();
+                
+                JOptionPane.showMessageDialog(null,"Successfully saved!");
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+    else{
+        JOptionPane.showMessageDialog(null,"Error!,cannot write into txt file!");
+    }
+        
+        
+        
         
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
+    private void jTextEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextEmailActionPerformed
+
+    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordActionPerformed
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -233,7 +265,7 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelIc;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelPass;
-    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JTextField jPassword;
     private javax.swing.JTextField jTextContact;
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextGender;
