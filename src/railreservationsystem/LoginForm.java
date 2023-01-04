@@ -224,7 +224,14 @@ public class LoginForm extends javax.swing.JFrame {
         }
         else{
             getAuthent();
-            
+             //JOptionPane.showMessageDialog(null,access);
+             if(access==true){
+                 JOptionPane.showMessageDialog(null,"Successfully login!");
+             }
+             else{
+                 JOptionPane.showMessageDialog(null,"Wrong email or password!");
+             }
+             
         }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
@@ -272,9 +279,10 @@ public class LoginForm extends javax.swing.JFrame {
                 if(userInput.equals(Email)&& userPass.equals(Password)){
                     access = true;
                 }
+                
             }
             in.close();
-            
+           
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
