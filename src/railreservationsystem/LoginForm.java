@@ -102,12 +102,12 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGap(0, 43, Short.MAX_VALUE)
+                .addGap(0, 47, Short.MAX_VALUE)
                 .addComponent(jTextInputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextInputEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+            .addComponent(jTextInputEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -148,6 +148,11 @@ public class LoginForm extends javax.swing.JFrame {
         jTextForget.setForeground(new java.awt.Color(255, 255, 255));
         jTextForget.setText("Forget Password?");
         jTextForget.setBorder(null);
+        jTextForget.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextForgetActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -196,7 +201,7 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,6 +235,12 @@ public class LoginForm extends javax.swing.JFrame {
     private void jTextinputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextinputPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextinputPasswordActionPerformed
+
+    private void jTextForgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextForgetActionPerformed
+        // To change password with user's ic number
+        //coming soon
+        
+    }//GEN-LAST:event_jTextForgetActionPerformed
     //method to check the boolean value
     public void getAuthent(){
         //open file reader
