@@ -12,12 +12,12 @@ import java.util.logging.Logger;
  */
 public class RegisterationForm extends javax.swing.JFrame {
     
-    private String Name;
-    private String Email;
-    private String IcNum;
-    private String Gender;
-    private String Contact;
-    private String Password;
+    public String Name;
+    public String Email;
+    public String IcNum;
+    public String Gender;
+    public String Contact;
+    public String Password;
     private boolean passData=true;
     
     
