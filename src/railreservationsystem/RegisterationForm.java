@@ -194,7 +194,7 @@ public class RegisterationForm extends javax.swing.JFrame {
                 outFile.print(IcNum+";");
                 outFile.print(Gender+";");
                 outFile.println(Contact+";");
-                outFile.println();
+                //outFile.println();
                 
                 
                 
@@ -213,7 +213,9 @@ public class RegisterationForm extends javax.swing.JFrame {
     else{
         JOptionPane.showMessageDialog(null,"Error!,cannot write into txt file!");
     }
-        
+        LoginForm login = new LoginForm();
+        login.setVisible(true);
+        this.dispose();
         
         
         
