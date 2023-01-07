@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  */
 public class LoginForm extends javax.swing.JFrame {
     
+    
     private String userInput;
     private String userPass;
     private boolean access=false;
@@ -322,7 +323,11 @@ public class LoginForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //LoginForm myLogin = new LoginForm();
+               
                 new LoginForm().setVisible(true);
+                //myLogin.setExtendedState(myLogin.getExtendedState() | myLogin.MAXIMIZED_BOTH);
+             
             }
         });
     }
