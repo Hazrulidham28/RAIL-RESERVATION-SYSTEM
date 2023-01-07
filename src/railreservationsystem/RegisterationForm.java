@@ -55,6 +55,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabelContact = new javax.swing.JLabel();
         jButtonSubmit = new javax.swing.JButton();
         jPassword = new javax.swing.JTextField();
+        jButtonClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setForeground(java.awt.Color.white);
@@ -104,13 +105,13 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabelContact.setText("Contact Number");
         getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 295, -1, -1));
 
-        jButtonSubmit.setText("SUBMIT");
+        jButtonSubmit.setText("REGISTER");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSubmitActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 372, 109, 39));
+        getContentPane().add(jButtonSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 370, 109, 39));
 
         jPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +119,14 @@ public class RegisterationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, -1));
+
+        jButtonClear.setText("CLEAR");
+        jButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, 110, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -218,6 +227,17 @@ public class RegisterationForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordActionPerformed
 
+    private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
+        // TODO add your handling code here:
+        jTextEmail.setText("");
+        jPassword.setText("");
+        jTextName.setText("");
+        jTextIc.setText("");
+        jTextGender.setText("");
+        jTextContact.setText("");
+        JOptionPane.showMessageDialog(null,"Successfully cleared!");
+    }//GEN-LAST:event_jButtonClearActionPerformed
+
     
     
     
@@ -257,6 +277,7 @@ public class RegisterationForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonSubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelContact;

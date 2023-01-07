@@ -145,10 +145,10 @@ public class TicketHistory extends javax.swing.JFrame {
                         String time=hs.nextToken();
                         double price=Double.parseDouble(hs.nextToken());
                         String seat=hs.nextToken();
-                        cust[i] = new Customer(depature, origin, destination, date, time, price, seat);
+                        //cust[i] = new Customer(depature, origin, destination, date, time, price, seat);
         }
         }}}
-        catch(){}
+        catch(FileNotFoundException ex){}
        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
