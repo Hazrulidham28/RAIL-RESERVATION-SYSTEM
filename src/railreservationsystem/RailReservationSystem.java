@@ -4,11 +4,14 @@
  */
 package railreservationsystem;
 
+
+
 /**
  *
  * @author Hazrul Idham
  */
 public class RailReservationSystem {
+    
 
     /**
      * @param args the command line arguments

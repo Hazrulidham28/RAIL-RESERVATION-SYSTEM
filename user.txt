@@ -1,4 +1,3 @@
-samy@gmail.com;sam123;Samson;019283745;male;0183656763;
-hazrul@gmail.com;hazrul123;Hazrul;010910110218;male;0182323835;
-manap@gmail.com;manappower;Manab;09886627834;female;0123434546;
-manwap@gmail.com;manapwwpower;Manab;09886627834;female;0123434546;
+samy@gmail.com;sam123;Samsul;010876028776;male;0176654563;Student;
+yabedul@gmail.com;yabedul123;Yabedul somad;018765927654;male;01999882344;OKU;
+Manap@gmail.com;powerpower;Manup;01887723432;male;01877664423;Senior Citizen;

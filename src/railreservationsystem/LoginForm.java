@@ -29,7 +29,13 @@ public class LoginForm extends javax.swing.JFrame {
     private String Gender;
     private String Contact;
     private String status;
-    
+    private String CurrEmail;
+    private String CurrPassword;
+    private String CurrName;
+    private String CurrIcNum;
+    private String CurrGender;
+    private String CurrContact;
+    private String Currstatus;
    
     
 
@@ -230,6 +236,10 @@ public class LoginForm extends javax.swing.JFrame {
              //JOptionPane.showMessageDialog(null,access);
              if(access==true){
                  JOptionPane.showMessageDialog(null,"Successfully login!");
+                 //create txt file for acc details
+                 setCustomerdata();
+                 
+                 //put main menu here
              }
              else{
                  JOptionPane.showMessageDialog(null,"Wrong email or password!");
@@ -284,9 +294,15 @@ public class LoginForm extends javax.swing.JFrame {
                 
                 if(userInput.equals(Email)&& userPass.equals(Password)){
                     access = true;
+                    CurrEmail=Email;
+                    CurrPassword=Password;
+                    CurrName=Name;
+                    CurrIcNum=IcNum;
+                    CurrGender=Gender;
+                    CurrContact=Contact;
+                    Currstatus=status;
                     
-                    //pass customer information to the main class
-                   // RailReservationSystem data = new RailReservationSystem(Email,Password,Name,IcNum,Gender,Contact,status);
+                    
                 }
                 
             }
@@ -298,6 +314,38 @@ public class LoginForm extends javax.swing.JFrame {
         }
         
         
+    }
+    
+    public void setCustomerdata(){
+    
+        try {
+                //open Filewriter
+                //use true to active append mode to filewriter
+                FileWriter inFile = new FileWriter("currentuser.txt");
+                PrintWriter outFile = new PrintWriter(inFile);
+                
+                outFile.print(CurrEmail+";");
+                outFile.print(CurrPassword+";");
+                outFile.print(CurrName+";");
+                outFile.print(CurrIcNum+";");
+                outFile.print(CurrGender+";");
+                outFile.print(CurrContact+";");
+                outFile.println(Currstatus+";");
+                //outFile.println();
+                
+              
+                
+                outFile.close();
+                
+                
+                
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    
     }
     
     
