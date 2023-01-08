@@ -6,11 +6,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package railreservationsystem;
+import javax.swing.JOptionPane;
 /**
  *
  * @author alifs
  */
-  
+ 
 
 
 
@@ -20,13 +21,16 @@ package railreservationsystem;
 
 public class PaymentPage extends javax.swing.JFrame {
 
+    
+    public String paymentType;
     /**
      * Creates new form PaymentPage
      */
     public PaymentPage() {
         initComponents();
         
-    }   
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,8 +50,8 @@ public class PaymentPage extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
-        button5 = new java.awt.Button();
-        button4 = new java.awt.Button();
+        OnlineBankButton = new java.awt.Button();
+        CreditButton = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -96,21 +100,21 @@ public class PaymentPage extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        button5.setLabel("Online Banking");
-        button5.addActionListener(new java.awt.event.ActionListener() {
+        OnlineBankButton.setLabel("Online Banking");
+        OnlineBankButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button5ActionPerformed(evt);
+                OnlineBankButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(button5);
+        jPanel1.add(OnlineBankButton);
 
-        button4.setLabel("Credit Card");
-        button4.addActionListener(new java.awt.event.ActionListener() {
+        CreditButton.setLabel("Credit Card");
+        CreditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button4ActionPerformed(evt);
+                CreditButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(button4);
+        jPanel1.add(CreditButton);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 290, 630, 140);
@@ -118,15 +122,33 @@ public class PaymentPage extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button5ActionPerformed
+    private void OnlineBankButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineBankButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_button5ActionPerformed
+        
+        
+        String P = "Online Bank";
+        paymentType = payType(P);
+        JOptionPane.showMessageDialog(null,"Online Payment Successfull");
+        
+        
+    }//GEN-LAST:event_OnlineBankButtonActionPerformed
 
-    private void button4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_button4ActionPerformed
+    private void CreditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditButtonActionPerformed
+        JOptionPane.showMessageDialog(null,"Credit Payment Successfull");
+        String P = "Credit Card";
+        paymentType = payType(P);
+    }//GEN-LAST:event_CreditButtonActionPerformed
 
- 
+    public String payType(String pay){
+        String p="";
+        if(pay.equalsIgnoreCase("Online Bank")){
+            p= "Payment: Online Bank";
+        }
+        else if(pay.equalsIgnoreCase("Credit Card")){
+            p= "Payment: Credit Card";
+        }
+        return p;
+    }
 
     /**
      * @param args the command line arguments
@@ -163,10 +185,10 @@ public class PaymentPage extends javax.swing.JFrame {
         }); 
     }
         
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Button button4;
-    private java.awt.Button button5;
+    private java.awt.Button CreditButton;
+    private java.awt.Button OnlineBankButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;

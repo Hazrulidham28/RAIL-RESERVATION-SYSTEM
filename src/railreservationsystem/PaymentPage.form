@@ -170,20 +170,20 @@
         <Property name="rows" type="int" value="1"/>
       </Layout>
       <SubComponents>
-        <Component class="java.awt.Button" name="button5">
+        <Component class="java.awt.Button" name="OnlineBankButton">
           <Properties>
             <Property name="label" type="java.lang.String" value="Online Banking"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OnlineBankButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="java.awt.Button" name="button4">
+        <Component class="java.awt.Button" name="CreditButton">
           <Properties>
             <Property name="label" type="java.lang.String" value="Credit Card"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CreditButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
