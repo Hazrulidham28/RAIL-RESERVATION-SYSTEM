@@ -77,6 +77,11 @@ public class ForgetPassword extends javax.swing.JFrame {
         jLabel3.setText("Ic Number");
 
         jButtonBack.setText("Back");
+        jButtonBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBackActionPerformed(evt);
+            }
+        });
 
         jButtonSubmit.setText("Submit");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -191,11 +196,22 @@ public class ForgetPassword extends javax.swing.JFrame {
        changePass();
        JOptionPane.showMessageDialog(null,"Succesfully change password");
        
+       LoginForm lg=new LoginForm();
+       lg.setVisible(true);
+       this.dispose();
+       
        
        }else{
         JOptionPane.showMessageDialog(null,"You entered wrong email or password");
        }
     }//GEN-LAST:event_jButtonSubmitActionPerformed
+
+    private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
+        // go back to login page
+       LoginForm lg=new LoginForm();
+       lg.setVisible(true);
+       this.dispose();
+    }//GEN-LAST:event_jButtonBackActionPerformed
 
     /**
      * @param args the command line arguments
