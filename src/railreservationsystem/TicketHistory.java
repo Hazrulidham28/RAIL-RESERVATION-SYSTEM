@@ -4,14 +4,14 @@
  */
 package railreservationsystem;
 
-import java.io.FileNotFoundException;
+//import java.io.FileNotFoundException;
 import java.io.*;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
+//import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Intel i5
@@ -67,7 +67,6 @@ public class TicketHistory extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -143,7 +142,7 @@ public class TicketHistory extends javax.swing.JFrame {
             new Object [][] {
 
             },
-            new String [] {
+            new Object [] {
                 "Depature", "Origin", "Date", "Time", "Price", "Seat"
             }
         ) {
@@ -237,8 +236,6 @@ public class TicketHistory extends javax.swing.JFrame {
                 .addGap(16, 16, 16))
         );
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -263,25 +260,19 @@ public class TicketHistory extends javax.swing.JFrame {
                             .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(39, 39, 39)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(385, 385, 385))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
-                        .addGap(93, 93, 93)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -307,7 +298,7 @@ public class TicketHistory extends javax.swing.JFrame {
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(DisplaySeat, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 127, Short.MAX_VALUE))))
         );
 
         pack();
@@ -322,6 +313,32 @@ public class TicketHistory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
+    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField11ActionPerformed
+
+    private void HistoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HistoryTableMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel model=(DefaultTableModel)HistoryTable.getModel();
+        
+        int selectedRow=HistoryTable.getSelectedRow();
+        
+        String depature = model.getValueAt(selectedRow, 0).toString();
+        String origin = model.getValueAt(selectedRow, 1).toString();
+        String date = model.getValueAt(selectedRow, 2).toString();
+        String time = model.getValueAt(selectedRow, 3).toString();
+        String price = model.getValueAt(selectedRow, 4).toString();
+        //double p = Double.parseDouble(price);
+        String seat = model.getValueAt(selectedRow, 5).toString();
+        
+        DisplayDepart.setText(depature);
+        DisplayOrigin.setText(origin);
+        DisplayDate.setText(date);
+        DisplayTime.setText(time);
+        DisplayPrice.setText(price);
+        DisplaySeat.setText(seat);
+    }//GEN-LAST:event_HistoryTableMouseClicked
+
     private void DisplaySeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplaySeatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DisplaySeatActionPerformed
@@ -329,10 +346,6 @@ public class TicketHistory extends javax.swing.JFrame {
     private void DisplayPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayPriceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DisplayPriceActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
 
     private void DisplayTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DisplayTimeActionPerformed
         // TODO add your handling code here:
@@ -350,79 +363,46 @@ public class TicketHistory extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_DisplayDepartActionPerformed
 
-    private void HistoryTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HistoryTableMouseClicked
-        // TODO add your handling code here:
-        DefaultTableModel model=(DefaultTableModel)HistoryTable.getModel();
-        int selectedRow=HistoryTable.getSelectedRow();
-        String depature = model.getValueAt(selectedRow, 0).toString();
-        DisplayDepart.setText(depature);
-        String origin = model.getValueAt(selectedRow, 1).toString();
-        DisplayOrigin.setText(origin);
-        String date = model.getValueAt(selectedRow, 2).toString();
-        DisplayDate.setText(date);
-        String time = model.getValueAt(selectedRow, 3).toString();
-        DisplayTime.setText(time);
-        String price = model.getValueAt(selectedRow, 4).toString();
-        DisplayPrice.setText(price);
-        String seat = model.getValueAt(selectedRow, 5).toString();
-        DisplaySeat.setText(seat);
-    }//GEN-LAST:event_HistoryTableMouseClicked
-
     /**
      * @param args the command line arguments
      */
-    public void ReadHistory(){
+    private void ReadHistory(){
         //TicketDetails cust[]=new TicketDetails[100];
         try{
-            DefaultTableModel model=(DefaultTableModel)HistoryTable.getModel();
-            String inFile="Details.txt";
-            FileReader nm = new FileReader(inFile);
+            
+            //String inFile="Details.txt";
+            FileReader nm = new FileReader("Details.txt");
             Scanner in = new Scanner(nm);
+            DefaultTableModel model=(DefaultTableModel)HistoryTable.getModel();
 
             StringTokenizer hs;
             String input,delims=";";
 
-            while(in.hasNextLine()){
-//rt4teyy
+            while(in.hasNextLine()){//rt4teyy
                 input = in.nextLine();    
                 hs = new StringTokenizer(input,delims);
 
-                String depature=hs.nextToken();
-                String origin=hs.nextToken();
-                String date=hs.nextToken();
-                String time=hs.nextToken();
+                String depature = hs.nextToken();
+                String origin = hs.nextToken();
+                String date = hs.nextToken();
+                String time = hs.nextToken();
                 String price = hs.nextToken();
-                double p=Double.parseDouble(price);
-                String seat=hs.nextToken();
+                double p = Double.parseDouble(price);
+                String seat = hs.nextToken();
 
                 Object[] cust = {depature, origin, date, time, p, seat};
 
-               model.addRow(cust);
+                model.addRow(cust);
             }
-            nm.close();
             in.close();
+            nm.close();
+            
         }catch(Exception ex){
-            ex.printStackTrace();
+            System.out.println(ex);
         }
     }
     public static void main(String args[]) {
        
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TicketHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TicketHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TicketHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TicketHistory.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
         //</editor-fold>
 
         /* Create and display the form */
@@ -451,7 +431,6 @@ public class TicketHistory extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
