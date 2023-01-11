@@ -31,7 +31,13 @@ public class AccDetails extends javax.swing.JFrame {
     private String status;
     private String InputEmail;
     private String newPass;
-    
+    private String currmail;
+    private String currpass;
+    private String currname;
+    private String curric;
+    private String currgender;
+    private String currcontact;
+    private String currstat; 
     
 
     /**
@@ -256,6 +262,11 @@ public class AccDetails extends javax.swing.JFrame {
         UpdateAcc();
         JOptionPane.showMessageDialog(null,"Succesfully update changes!");
         //update latest data to currentuser.txt
+        //create obj from class login form
+        JOptionPane.showMessageDialog(null,currgender);
+        LoginForm lg = new LoginForm(currmail,currpass,currname,curric,currgender,currcontact,currstat);
+       //update new customer data into currentuser.txt
+        lg.setCustomerdata();
         
      
        
@@ -430,7 +441,7 @@ public class AccDetails extends javax.swing.JFrame {
                 pr.print(Gender+";");
                 pr.print(Contact+";");
                 pr.println(status+";");
-                    
+                currmail=Email;currpass=newPass;currname=Name;curric=IcNum;currgender=Gender;currcontact=Contact;currstat=status; 
                 }
                 //if email that user input is not equal, it will copy to temp file
                 else{
