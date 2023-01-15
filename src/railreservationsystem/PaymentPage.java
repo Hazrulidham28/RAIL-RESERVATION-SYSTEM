@@ -6,22 +6,37 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package railreservationsystem;
+
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+
+
 /**
  *
  * @author alifs
  */
+
+    
+
+    
+  
  
+    
 
-
-
-
-
-
+    
 
 public class PaymentPage extends javax.swing.JFrame {
 
-    
+    public String type;
+    public String origin;
+    public String destination;
+    public double fare;
     public String paymentType;
     /**
      * Creates new form PaymentPage
@@ -30,6 +45,8 @@ public class PaymentPage extends javax.swing.JFrame {
         initComponents();
         
     }
+   
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -40,29 +57,34 @@ public class PaymentPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        panel8 = new java.awt.Panel();
+        panel1 = new java.awt.Panel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jPanel1 = new javax.swing.JPanel();
-        OnlineBankButton = new java.awt.Button();
+        panel2 = new java.awt.Panel();
+        panel3 = new java.awt.Panel();
+        label2 = new java.awt.Label();
+        panel4 = new java.awt.Panel();
+        panel5 = new java.awt.Panel();
         CreditButton = new java.awt.Button();
+        OnlineBankButton = new java.awt.Button();
+        panel6 = new java.awt.Panel();
+        panel7 = new java.awt.Panel();
+        panel9 = new java.awt.Panel();
+        panel10 = new java.awt.Panel();
+        ShowDetailButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jTextPane1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jTextPane1.setText("ORDER/PAYMENT");
-        jScrollPane1.setViewportView(jTextPane1);
-
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(0, 0, 630, 40);
+        panel1.setBackground(new java.awt.Color(51, 51, 255));
+        getContentPane().add(panel1);
+        panel1.setBounds(0, 0, 670, 30);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -78,35 +100,27 @@ public class PaymentPage extends javax.swing.JFrame {
         jPanel6.add(label1);
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(0, 260, 630, 30);
+        jPanel6.setBounds(40, 300, 590, 30);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Type", "Origin", "Destination", "Quantity", "Fare"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable1);
+        panel2.setBackground(new java.awt.Color(0, 51, 255));
+        getContentPane().add(panel2);
+        panel2.setBounds(0, 30, 40, 30);
 
-        getContentPane().add(jScrollPane4);
-        jScrollPane4.setBounds(0, 40, 630, 220);
+        panel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
-        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
+        label2.setAlignment(java.awt.Label.CENTER);
+        label2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label2.setText("ORDER/PAYMENT");
+        panel3.add(label2);
 
-        OnlineBankButton.setLabel("Online Banking");
-        OnlineBankButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OnlineBankButtonActionPerformed(evt);
-            }
-        });
-        jPanel1.add(OnlineBankButton);
+        getContentPane().add(panel3);
+        panel3.setBounds(40, 30, 190, 30);
+
+        panel4.setBackground(new java.awt.Color(0, 51, 255));
+        getContentPane().add(panel4);
+        panel4.setBounds(630, 30, 40, 30);
+
+        panel5.setLayout(new java.awt.GridLayout());
 
         CreditButton.setLabel("Credit Card");
         CreditButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,30 +128,118 @@ public class PaymentPage extends javax.swing.JFrame {
                 CreditButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(CreditButton);
+        panel5.add(CreditButton);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 290, 630, 140);
+        OnlineBankButton.setLabel("Online Banking");
+        OnlineBankButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnlineBankButtonActionPerformed(evt);
+            }
+        });
+        panel5.add(OnlineBankButton);
+
+        getContentPane().add(panel5);
+        panel5.setBounds(40, 330, 590, 100);
+
+        panel6.setBackground(new java.awt.Color(0, 51, 255));
+        getContentPane().add(panel6);
+        panel6.setBounds(0, 60, 40, 400);
+
+        panel7.setBackground(new java.awt.Color(0, 51, 255));
+        getContentPane().add(panel7);
+        panel7.setBounds(630, 60, 40, 400);
+
+        panel9.setBackground(new java.awt.Color(0, 51, 255));
+        getContentPane().add(panel9);
+        panel9.setBounds(40, 430, 590, 30);
+
+        ShowDetailButton.setBackground(new java.awt.Color(255, 204, 51));
+        ShowDetailButton.setText("SHOW DETAILS");
+        ShowDetailButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowDetailButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel10Layout = new javax.swing.GroupLayout(panel10);
+        panel10.setLayout(panel10Layout);
+        panel10Layout.setHorizontalGroup(
+            panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel10Layout.createSequentialGroup()
+                .addContainerGap(281, Short.MAX_VALUE)
+                .addComponent(ShowDetailButton)
+                .addContainerGap())
+        );
+        panel10Layout.setVerticalGroup(
+            panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowDetailButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(panel10);
+        panel10.setBounds(230, 30, 400, 30);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(40, 60, 590, 240);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CreditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditButtonActionPerformed
+        paymentType = payConfirmBank();
+    }//GEN-LAST:event_CreditButtonActionPerformed
+
+    private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
+        
+        String filePath = "C:\\Users\\alifs\\Desktop\\TicketDetails.txt";
+        File file = new File(filePath);
+        
+        try{
+           BufferedReader br = new BufferedReader(new FileReader(file));
+           //get first line
+           //trim() eliminates the leading and trailing spaces
+           String firstLine = br.readLine().trim();
+           //get the column's name from the first row
+           String[] columnsName = firstLine.split(";");
+           //set columns name to the jtable model
+           DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
+           tableModel.setColumnIdentifiers(columnsName);
+            
+           // get lines from txt file
+            Object[] tableLines = br.lines().toArray();
+            
+           //extract data from lines
+           //set data to jtable model
+           for(int i =0; i<tableLines.length;i++){
+               String line = tableLines[i].toString().trim();
+               String[] dataRow = line.split(";");
+               tableModel.addRow(dataRow);
+           }
+           
+        }   catch(Exception ex){
+            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex);  
+        }
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ShowDetailButtonActionPerformed
+
     private void OnlineBankButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineBankButtonActionPerformed
         // TODO add your handling code here:
-        
-        
-        String P = "Online Bank";
-        paymentType = payType(P);
-        JOptionPane.showMessageDialog(null,"Online Payment Successfull");
-        
-        
-    }//GEN-LAST:event_OnlineBankButtonActionPerformed
 
-    private void CreditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditButtonActionPerformed
-        JOptionPane.showMessageDialog(null,"Credit Payment Successfull");
-        String P = "Credit Card";
-        paymentType = payType(P);
-    }//GEN-LAST:event_CreditButtonActionPerformed
+        paymentType = payConfirmOnline();
+        
+
+    }//GEN-LAST:event_OnlineBankButtonActionPerformed
 
     public String payType(String pay){
         String p="";
@@ -150,10 +252,43 @@ public class PaymentPage extends javax.swing.JFrame {
         return p;
     }
 
+    public String payConfirmOnline(){
+        int result = JOptionPane.showConfirmDialog(null,"Are you sure?", "Pay confirmation", JOptionPane.YES_NO_OPTION);
+        String P, PC = "";
+        if(result == JOptionPane.YES_OPTION){
+            P = "Online Bank";
+            //user clicked yes
+            PC= payType(P);
+            JOptionPane.showMessageDialog(null,"Online Payment Successfull");
+        }
+        else {
+            //user clicked no 
+            JOptionPane.showMessageDialog(null,"Online Payment Cancelled.");
+        }
+        return PC;
+    }
+    
+    public String payConfirmBank(){
+         int result = JOptionPane.showConfirmDialog(null,"Are you sure?", "Pay confirmation", JOptionPane.YES_NO_OPTION);
+        String P, PC = "";
+        if(result == JOptionPane.YES_OPTION){
+            P = "Credit Card";
+            //user clicked yes
+            PC= payType(P);
+            JOptionPane.showMessageDialog(null,"Credit card payment is successfull");
+        }
+        else {
+            //user clicked no 
+            JOptionPane.showMessageDialog(null,"Credit card payment is cancelled.");
+        }
+        return PC;
+    }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+      
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -183,22 +318,33 @@ public class PaymentPage extends javax.swing.JFrame {
                 new PaymentPage().setVisible(true);
             }
         }); 
+        
+        
     }
         
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button CreditButton;
     private java.awt.Button OnlineBankButton;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton ShowDetailButton;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextPane jTextPane1;
     private java.awt.Label label1;
+    private java.awt.Label label2;
+    private java.awt.Panel panel1;
+    private java.awt.Panel panel10;
+    private java.awt.Panel panel2;
+    private java.awt.Panel panel3;
+    private java.awt.Panel panel4;
+    private java.awt.Panel panel5;
+    private java.awt.Panel panel6;
+    private java.awt.Panel panel7;
+    private java.awt.Panel panel8;
+    private java.awt.Panel panel9;
     // End of variables declaration//GEN-END:variables
 }
 
