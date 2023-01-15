@@ -239,7 +239,7 @@ public class LoginForm extends javax.swing.JFrame {
                  //create txt file for acc details
                  setCustomerdata();
                  
-                 //put main menu here
+                 
              }
              else{
                  JOptionPane.showMessageDialog(null,"Wrong email or password!");
@@ -401,4 +401,17 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextInputEmail;
     private javax.swing.JTextField jTextinputPassword;
     // End of variables declaration//GEN-END:variables
+
+    
+public LoginForm(String email, String pass, String name,String ic,String Gender,String phone,String stat){
+    this.CurrEmail=email;
+    this.CurrPassword=pass;
+    this.CurrName=name;
+    this.CurrIcNum=ic;
+    this.CurrGender=Gender;
+    this.CurrContact=phone;
+    this.Currstatus=stat;
+    JOptionPane.showMessageDialog(null,this.CurrGender);
+   
+}
 }

@@ -191,8 +191,8 @@ public class ForgetPassword extends javax.swing.JFrame {
        getAuthenIC();
        //to check the boolean value JOptionPane.showMessageDialog(null,access);
        if(access==true){
-       // to check boolean value JOptionPane.showMessageDialog(null,access);
        
+       //method to change password
        changePass();
        JOptionPane.showMessageDialog(null,"Succesfully change password");
        

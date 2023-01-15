@@ -4,14 +4,40 @@
  */
 package railreservationsystem;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hazrul Idham
  */
 public class AccDetails extends javax.swing.JFrame {
     
-    
-   
+    private String Email;
+    private String Password;
+    private String Name;
+    private String IcNum;
+    private String Gender;
+    private String Contact;
+    private String status;
+    private String InputEmail;
+    private String newPass;
+    private String currmail;
+    private String currpass;
+    private String currname;
+    private String curric;
+    private String currgender;
+    private String currcontact;
+    private String currstat; 
     
 
     /**
@@ -41,7 +67,6 @@ public class AccDetails extends javax.swing.JFrame {
         jTextName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jTextIc = new javax.swing.JTextField();
-        jPasswordold = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jTextEmail = new javax.swing.JTextField();
@@ -49,8 +74,10 @@ public class AccDetails extends javax.swing.JFrame {
         jRadioButtonmale = new javax.swing.JRadioButton();
         jRadioButtonFemale = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
-        jPasswordnew = new javax.swing.JPasswordField();
         jButtonsubmit = new javax.swing.JButton();
+        jButtonLoad = new javax.swing.JButton();
+        jPasswordold = new javax.swing.JTextField();
+        jPasswordnew = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,13 +90,6 @@ public class AccDetails extends javax.swing.JFrame {
         jLabel2.setText("Name");
 
         jLabel3.setText("MyKad No");
-
-        jPasswordold.setText("jPasswordField1");
-        jPasswordold.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordoldActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Password");
 
@@ -101,12 +121,23 @@ public class AccDetails extends javax.swing.JFrame {
 
         jLabel7.setText("New Password");
 
-        jPasswordnew.setText("jPasswordField2");
-
         jButtonsubmit.setText("Submit");
         jButtonsubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonsubmitActionPerformed(evt);
+            }
+        });
+
+        jButtonLoad.setText("Load");
+        jButtonLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoadActionPerformed(evt);
+            }
+        });
+
+        jPasswordold.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordoldActionPerformed(evt);
             }
         });
 
@@ -115,30 +146,27 @@ public class AccDetails extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(25, 25, 25)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPasswordold)
+                    .addComponent(jTextIc, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextName)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel4)
+                    .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(132, 132, 132)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonsubmit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButtonsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextIc)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextName)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jPasswordold, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))
-                        .addGap(132, 132, 132)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextEmail)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jRadioButtonmale)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButtonFemale))
-                            .addComponent(jLabel7)
-                            .addComponent(jPasswordnew, javax.swing.GroupLayout.DEFAULT_SIZE, 246, Short.MAX_VALUE))))
+                        .addComponent(jRadioButtonmale)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jRadioButtonFemale))
+                    .addComponent(jLabel7)
+                    .addComponent(jPasswordnew))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -170,7 +198,9 @@ public class AccDetails extends javax.swing.JFrame {
                     .addComponent(jPasswordold, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(jPasswordnew))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonsubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonsubmit, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                    .addComponent(jButtonLoad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -221,22 +251,57 @@ public class AccDetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextEmailActionPerformed
 
-    private void jPasswordoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordoldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordoldActionPerformed
-
     private void jRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemaleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButtonFemaleActionPerformed
 
     private void jButtonsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonsubmitActionPerformed
-        // TODO add your handling code here:
+        newPass=jPasswordnew.getText();
+        
+        //update latest data to user.txt
+        UpdateAcc();
+        JOptionPane.showMessageDialog(null,"Succesfully update changes!");
+        //update latest data to currentuser.txt
+        //create obj from class login form
+        JOptionPane.showMessageDialog(null,currgender);
+        LoginForm lg = new LoginForm(currmail,currpass,currname,curric,currgender,currcontact,currstat);
+       //update new customer data into currentuser.txt
+        lg.setCustomerdata();
+        
+     
+       
     }//GEN-LAST:event_jButtonsubmitActionPerformed
+
+    private void jButtonLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadActionPerformed
+        // TODO add your handling code here:
+        readUserData();
+        if(Gender.equals("male")){
+            jRadioButtonmale.setSelected(true);
+        }
+        else{
+            jRadioButtonFemale.setSelected(true);
+        }
+        
+        
+        jTextName.setText(Name);
+        jTextIc.setText(IcNum);
+        jTextEmail.setText(Email);
+        jPasswordold.setText(Password);
+        
+       
+    }//GEN-LAST:event_jButtonLoadActionPerformed
+
+    private void jPasswordoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordoldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordoldActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+      //  AccDetails Ad = new AccDetails();
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -264,6 +329,7 @@ public class AccDetails extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AccDetails().setVisible(true);
+                
             }
         });
         
@@ -275,6 +341,7 @@ public class AccDetails extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.JButton jButtonLoad;
     private javax.swing.JButton jButtonsubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -285,12 +352,134 @@ public class AccDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordnew;
-    private javax.swing.JPasswordField jPasswordold;
+    private javax.swing.JTextField jPasswordnew;
+    private javax.swing.JTextField jPasswordold;
     private javax.swing.JRadioButton jRadioButtonFemale;
     private javax.swing.JRadioButton jRadioButtonmale;
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextIc;
     private javax.swing.JTextField jTextName;
     // End of variables declaration//GEN-END:variables
+
+ public void readUserData(){
+        //open file reader
+        
+        FileReader fr;
+        try {
+            fr = new FileReader("currentuser.txt");
+            
+            Scanner in = new Scanner(fr);
+            
+            StringTokenizer st;
+            String input,delims=";";
+            
+            while(in.hasNextLine()){
+                input=in.nextLine();
+                st = new StringTokenizer(input,delims);
+                
+                while(st.hasMoreTokens()){
+                Email=st.nextToken();
+                Password=st.nextToken();
+                Name=st.nextToken();
+                IcNum=st.nextToken();
+                Gender=st.nextToken();
+                Contact=st.nextToken();
+                status=st.nextToken();
+                
+                }
+               
+                
+                
+            }
+            in.close();
+           InputEmail=Email;
+           
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+    }
+ 
+ public void UpdateAcc() {
+     
+        
+        FileReader fr;
+        FileWriter fw;
+        PrintWriter pr;
+        try{
+            fr=new FileReader("user.txt");
+            fw= new FileWriter("temp.txt");
+            pr = new PrintWriter(fw);
+            
+           Scanner in = new Scanner(fr);
+           
+           StringTokenizer st;
+            String input,delims=";";
+            //
+            while(in.hasNextLine()){
+                input=in.nextLine();
+                st = new StringTokenizer(input,delims);
+                
+                while(st.hasMoreTokens()){
+                Email=st.nextToken();
+                Password=st.nextToken();
+                Name=st.nextToken();
+                IcNum=st.nextToken();
+                Gender=st.nextToken();
+                Contact=st.nextToken();
+                status=st.nextToken();
+                }
+                //if email that user input is equals like in file, it will replace new password into temp file
+                if(InputEmail.equals(Email)){
+                pr.print(Email+";");
+                pr.print(newPass+";");
+                pr.print(Name+";");
+                pr.print(IcNum+";");
+                pr.print(Gender+";");
+                pr.print(Contact+";");
+                pr.println(status+";");
+                currmail=Email;currpass=newPass;currname=Name;curric=IcNum;currgender=Gender;currcontact=Contact;currstat=status; 
+                }
+                //if email that user input is not equal, it will copy to temp file
+                else{
+                pr.print(Email+";");
+                pr.print(Password+";");
+                pr.print(Name+";");
+                pr.print(IcNum+";");
+                pr.print(Gender+";");
+                pr.print(Contact+";");
+                pr.println(status+";");
+                }
+            }
+           
+            in.close();
+            pr.close();
+           //to delete user.txt that has old data
+           File oldfile = new File("user.txt");
+           oldfile.delete();
+           
+           //rename temp.txt that has the latest data to user.txt
+           File newfile =new File("temp.txt");
+           newfile.renameTo(new File("user.txt"));
+           
+          // JOptionPane.showMessageDialog(null,"Succesfully update data!");
+           
+           
+        
+        }catch (FileNotFoundException ex) {
+            Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ForgetPassword.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    
+    //
+    
+    }
+
+
 }
