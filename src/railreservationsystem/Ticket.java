@@ -21,6 +21,8 @@ public class Ticket implements Serializable {
     private double pPlatinum;
     private double pGold;
 
+    public Ticket(){}
+    
     public Ticket(String code, String date, String origin, String destination, String departure, String arrival, String duration, double pPlatinum, double pGold) {
         this.code = code;
         this.date = date;

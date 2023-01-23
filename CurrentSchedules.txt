@@ -1,1 +1,1 @@
-T4;25/4/2023;Batang Melaka;Ipoh;18:57;23:52;4h 55m;48.0;55.0;
+T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;25.0;32.0;
