@@ -23,11 +23,77 @@ import javax.swing.table.DefaultTableModel;
  */
 public class BuyTicket extends javax.swing.JFrame {
 
-    /**
-     * Creates new form BuyTicket
-     */
+    Ticket[] ticket;
+    String [] codeArray;
+    
     public BuyTicket() {
         initComponents();
+        
+        
+        int size = 0;
+        try
+        {
+            FileReader fileIn = new FileReader("Schedules.txt");
+            Scanner input = new Scanner(fileIn);
+            while(input.hasNextLine())
+            {
+                size++;
+                input.nextLine();
+            }
+            input.close();
+        }
+        
+        catch(Exception e)
+        {
+            System.out.println(e.toString());
+        }
+        
+        ticket = new Ticket[size];
+        codeArray = new String[size];
+        readFileTicket();
+        
+        jComboBoxTrainCode.setModel(new javax.swing.DefaultComboBoxModel<>(codeArray));
+    }
+    
+    public void readFileTicket()
+    {
+        try {
+            try (FileReader readSchedule = new FileReader("Schedules.txt")) {
+                BufferedReader br = new BufferedReader(readSchedule);
+                
+                DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+                
+                String input; int i = 0;
+                while((input = br.readLine() ) != null)
+                {
+                    StringTokenizer st = new StringTokenizer (input,";");
+                    
+                    String code = st.nextToken();
+                    codeArray[i] = code;
+                    String date = st.nextToken();
+                    String origin = st.nextToken();
+                    String destination = st.nextToken();
+                    String departure = st.nextToken();
+                    String arrival = st.nextToken();
+                    String duration = st.nextToken();
+                    double pPlatinum = Double.parseDouble(st.nextToken());
+                    double pGold = Double.parseDouble(st.nextToken());
+                    
+                    ticket[i] = new Ticket(code, date, origin, destination, departure, arrival, duration, pPlatinum, pGold);
+                    Object[] tkt = {code, date, origin, destination, departure, arrival, duration, pPlatinum, pGold};
+                    model.addRow(tkt);
+                    
+                    i++;
+                    
+                }
+                readSchedule.close();
+                }
+            }
+        catch (FileNotFoundException ex) {
+            Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -160,33 +226,6 @@ public class BuyTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_ChooseSeatButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        int size = 0;
-        try
-        {
-            FileReader fileIn = new FileReader("Schedules 22 JAN.txt");
-            Scanner input = new Scanner(fileIn);
-            while(input.hasNextLine())
-            {
-                size++;
-                input.nextLine();
-            }
-            input.close();
-        }
-        
-        catch(Exception e)
-        {
-            System.out.println(e.toString());
-        }
-        
-        String code[] = new String[size];
-        String origin[] = new String[size];
-        String destination[] = new String[size];
-        String departure[] = new String[size];
-        String arrival[] = new String[size];
-        String duration[] = new String[size];
-        String date[] = new String[size];
-        double pPlatinum[] = new double[size];
-        double pGold[] = new double[size];
         
         try {
             FileReader readSchedule = new FileReader("Schedules 22 JAN.txt");
@@ -202,21 +241,12 @@ public class BuyTicket extends javax.swing.JFrame {
                 String [] dataRow = line.split(";");
                 model.addRow(dataRow);
             }
-            
-            
-            for(int j=0; j<code.length; j++)
-                System.out.println(code[j]);
-            
-            String Tcode[] = {"T1","T2"};
-            DefaultComboBoxModel mod = new DefaultComboBoxModel(Tcode);
-            jComboBoxTrainCode.setModel(mod); 
         } 
         catch (FileNotFoundException ex) {
             Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_formWindowOpened
    
     /**
