@@ -76,6 +76,12 @@ public class RegisterationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 270, 30));
+
+        jTextName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNameActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 200, 270, 30));
 
         jTextIc.addActionListener(new java.awt.event.ActionListener() {
@@ -254,6 +260,9 @@ public class RegisterationForm extends javax.swing.JFrame {
     else{
         JOptionPane.showMessageDialog(null,"Error!,cannot write into txt file!");
     }
+        
+        
+        
         LoginForm login = new LoginForm();
         login.setVisible(true);
         this.dispose();
@@ -288,6 +297,10 @@ public class RegisterationForm extends javax.swing.JFrame {
     private void jRadioOKUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioOKUActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioOKUActionPerformed
+
+    private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNameActionPerformed
 
     
     
@@ -347,6 +360,6 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextGender;
     private javax.swing.JTextField jTextIc;
-    private javax.swing.JTextField jTextName;
+    public static javax.swing.JTextField jTextName;
     // End of variables declaration//GEN-END:variables
 }
