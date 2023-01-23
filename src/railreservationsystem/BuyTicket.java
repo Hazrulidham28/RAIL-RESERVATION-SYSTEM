@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -25,12 +26,22 @@ public class BuyTicket extends javax.swing.JFrame {
 
     Ticket[] ticket;
     String [] codeArray;
+    int size;
+    String codeF;
+    String dateF;
+    String originF;
+    String destinationF;
+    String departureF;
+    String arrivalF;
+    String durationF;
+    double pPlatinumF;
+    double pGoldF;
     
     public BuyTicket() {
         initComponents();
         
         
-        int size = 0;
+        size = 0;
         try
         {
             FileReader fileIn = new FileReader("Schedules.txt");
@@ -53,6 +64,7 @@ public class BuyTicket extends javax.swing.JFrame {
         readFileTicket();
         
         jComboBoxTrainCode.setModel(new javax.swing.DefaultComboBoxModel<>(codeArray));
+        jComboBoxTrainCode.setSelectedIndex(0);
     }
     
     public void readFileTicket()
@@ -157,6 +169,12 @@ public class BuyTicket extends javax.swing.JFrame {
 
         jLabel5.setText(getName());
 
+        jComboBoxTrainCode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxTrainCodeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -217,37 +235,43 @@ public class BuyTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    
     private void ChooseSeatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChooseSeatButtonActionPerformed
-        if(jComboBoxTrainCode.getSelectedItem().toString().equals("T1"))
-        {
-            
-        }
+        new SeatingPage().setVisible(true);
     }//GEN-LAST:event_ChooseSeatButtonActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         
-        try {
-            FileReader readSchedule = new FileReader("Schedules 22 JAN.txt");
-            BufferedReader br = new BufferedReader(readSchedule);
-            
-            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-            
-            Object[] tableLines = br.lines().toArray();
-            
-            for(int i = 0; i < tableLines.length; i++)
-            {
-                String line = tableLines[i].toString().trim();
-                String [] dataRow = line.split(";");
-                model.addRow(dataRow);
-            }
-        } 
-        catch (FileNotFoundException ex) {
-            Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }//GEN-LAST:event_formWindowOpened
+
+    private void jComboBoxTrainCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxTrainCodeActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = jComboBoxTrainCode.getSelectedIndex();
+        
+        for(int i=0; i<size; i++)
+        {
+            try
+            {
+                PrintWriter out = new PrintWriter("CurrentSchedules.txt");
+                out.print(ticket[selectedIndex].getCode()+";");
+                out.print(ticket[selectedIndex].getDate()+";");
+                out.print(ticket[selectedIndex].getOrigin()+";");
+                out.print(ticket[selectedIndex].getDestination()+";");
+                out.print(ticket[selectedIndex].getDeparture()+";");
+                out.print(ticket[selectedIndex].getArrival()+";");
+                out.print(ticket[selectedIndex].getDuration()+";");
+                out.print(ticket[selectedIndex].getpPlatinum()+";");
+                out.print(ticket[selectedIndex].getpGold()+";");
+                
+                out.close();
+            }
+            catch(FileNotFoundException e){
+            System.out.print(e.toString());}
+            catch(NumberFormatException e){
+            System.out.print(e.toString());}
+            catch(IOException e){
+            System.out.print(e.toString());}
+        }
+    }//GEN-LAST:event_jComboBoxTrainCodeActionPerformed
    
     /**
      * @param args the command line arguments
