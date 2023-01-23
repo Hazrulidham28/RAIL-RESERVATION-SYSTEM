@@ -109,7 +109,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         jTextContact.setBackground(new java.awt.Color(254, 226, 197));
         getContentPane().add(jTextContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 270, 30));
 
-        jLabelEmail.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelEmail.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabelEmail.setForeground(new java.awt.Color(0, 29, 110));
         jLabelEmail.setText("Email");
         getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 30));
@@ -201,7 +201,6 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 90, 20));
 
         jPanel1.setBackground(new java.awt.Color(0, 29, 110));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 226, 197));
