@@ -61,15 +61,19 @@ public class RegisterationForm extends javax.swing.JFrame {
         jRadioOKU = new javax.swing.JRadioButton();
         jRadioSenior = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(51, 153, 255));
+        setBackground(new java.awt.Color(196, 221, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusCycleRoot(false);
         setForeground(java.awt.Color.white);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextEmail.setBackground(new java.awt.Color(254, 226, 197));
         jTextEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextEmailActionPerformed(evt);
@@ -77,6 +81,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
 
+        jTextName.setBackground(new java.awt.Color(254, 226, 197));
         jTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNameActionPerformed(evt);
@@ -84,6 +89,8 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
 
+        jTextIc.setBackground(new java.awt.Color(254, 226, 197));
+        jTextIc.setForeground(new java.awt.Color(255, 255, 255));
         jTextIc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIcActionPerformed(evt);
@@ -91,32 +98,49 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jTextIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 270, 30));
 
+        jTextGender.setBackground(new java.awt.Color(254, 226, 197));
         jTextGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextGenderActionPerformed(evt);
             }
         });
         getContentPane().add(jTextGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 270, 30));
+
+        jTextContact.setBackground(new java.awt.Color(254, 226, 197));
         getContentPane().add(jTextContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 270, 30));
 
+        jLabelEmail.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(0, 29, 110));
         jLabelEmail.setText("Email");
-        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 80, 10));
+        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 30));
 
+        jLabelPass.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelPass.setForeground(new java.awt.Color(0, 29, 110));
         jLabelPass.setText("Password");
-        getContentPane().add(jLabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 100, 10));
+        getContentPane().add(jLabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 100, 20));
 
+        jLabelName.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelName.setForeground(new java.awt.Color(0, 29, 110));
         jLabelName.setText("Name");
-        getContentPane().add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 90, 10));
+        getContentPane().add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 90, 20));
 
+        jLabelIc.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelIc.setForeground(new java.awt.Color(0, 29, 110));
         jLabelIc.setText("Identity Card Number");
-        getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 170, 10));
+        getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 190, 20));
 
+        jLabelGender.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelGender.setForeground(new java.awt.Color(0, 29, 110));
         jLabelGender.setText("Gender");
-        getContentPane().add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, 10));
+        getContentPane().add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, 20));
 
+        jLabelContact.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelContact.setForeground(new java.awt.Color(0, 29, 110));
         jLabelContact.setText("Contact Number");
-        getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 140, 10));
+        getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 140, 20));
 
+        jButtonSubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButtonSubmit.setForeground(new java.awt.Color(0, 29, 110));
         jButtonSubmit.setText("REGISTER");
         jButtonSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +149,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 130, 40));
 
+        jPassword.setBackground(new java.awt.Color(254, 226, 197));
         jPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordActionPerformed(evt);
@@ -132,6 +157,8 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
 
+        jButtonClear.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButtonClear.setForeground(new java.awt.Color(0, 29, 110));
         jButtonClear.setText("CLEAR");
         jButtonClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +168,8 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, 130, 40));
 
         buttonGroup1.add(jRadioStudent);
+        jRadioStudent.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioStudent.setForeground(new java.awt.Color(0, 29, 110));
         jRadioStudent.setText("Student");
         jRadioStudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +179,8 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jRadioStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 120, 30));
 
         buttonGroup1.add(jRadioOKU);
+        jRadioOKU.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioOKU.setForeground(new java.awt.Color(0, 29, 110));
         jRadioOKU.setText("OKU");
         jRadioOKU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,15 +190,32 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jRadioOKU, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 100, 30));
 
         buttonGroup1.add(jRadioSenior);
+        jRadioSenior.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioSenior.setForeground(new java.awt.Color(0, 29, 110));
         jRadioSenior.setText("Senior Citizen");
         getContentPane().add(jRadioSenior, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 150, 30));
 
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 29, 110));
         jLabel2.setText("Status");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 90, 20));
 
+        jPanel1.setBackground(new java.awt.Color(0, 29, 110));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("REGISTRATION");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, -1, -1));
+        jLabel1.setForeground(new java.awt.Color(254, 226, 197));
+        jLabel1.setText("REGISTERATION");
+        jPanel1.add(jLabel1);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 60));
+
+        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 510));
+
+        jPanel3.setBackground(new java.awt.Color(0, 29, 110));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1000, 100));
 
         pack();
         setLocationRelativeTo(null);
@@ -354,6 +402,9 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelIc;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelPass;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jPassword;
     private javax.swing.JRadioButton jRadioOKU;
     private javax.swing.JRadioButton jRadioSenior;
@@ -362,6 +413,6 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextGender;
     private javax.swing.JTextField jTextIc;
-    private javax.swing.JTextField jTextName;
+    public static javax.swing.JTextField jTextName;
     // End of variables declaration//GEN-END:variables
 }

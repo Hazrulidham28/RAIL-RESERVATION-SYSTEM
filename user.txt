@@ -4,3 +4,4 @@ Manap@gmail.com;powerpower;Manup;01887723432;male;01877664423;Senior Citizen;
 iliyanaza;iii;Lina ss;029223433;Female;01139969144;Student;
 iliya;lina;lina;02;female;02993;Student;
 lina;lina;lina syazani;22;female;33;Student;
+apiz@gmail.com;manap123;Pizz;01992233;male;01288334;Student;
