@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
+import javax.swing.JFrame;
 
 
 /**
@@ -42,8 +43,11 @@ public class PaymentPage extends javax.swing.JFrame {
      * Creates new form PaymentPage
      */
     public PaymentPage() {
+         
         initComponents();
         
+            
+           
     }
    
     
@@ -80,11 +84,16 @@ public class PaymentPage extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         panel1.setBackground(new java.awt.Color(51, 51, 255));
         getContentPane().add(panel1);
-        panel1.setBounds(0, 0, 670, 30);
+        panel1.setBounds(10, 0, 660, 30);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -120,7 +129,7 @@ public class PaymentPage extends javax.swing.JFrame {
         getContentPane().add(panel4);
         panel4.setBounds(630, 30, 40, 30);
 
-        panel5.setLayout(new java.awt.GridLayout());
+        panel5.setLayout(new java.awt.GridLayout(1, 0));
 
         CreditButton.setLabel("Credit Card");
         CreditButton.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +209,7 @@ public class PaymentPage extends javax.swing.JFrame {
 
     private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
         
-        String filePath = "C:\\Users\\alifs\\Desktop\\TicketDetails.txt";
+        String filePath = "C:\\Users\\alifs\\Desktop\\TicketDetails.txt";//will be changed soon
         File file = new File(filePath);
         
         try{
@@ -226,7 +235,8 @@ public class PaymentPage extends javax.swing.JFrame {
            }
            
         }   catch(Exception ex){
-            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex);  
+            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex); 
+            JOptionPane.showMessageDialog(null,"The details for your ticket does not exist.");
         }
         
 
@@ -240,6 +250,11 @@ public class PaymentPage extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_OnlineBankButtonActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+                // TODO add your handling code here:
+        //        setExtendedState(JFrame.MAXIMISED_BOTH);
+    }//GEN-LAST:event_formWindowOpened
 
     public String payType(String pay){
         String p="";
