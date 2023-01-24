@@ -1,2 +1,2 @@
-Kuala Lumpur;Johor;18/10/2002;9:00am;34.64;3a;34;77
-Taiping;Kedah;12/53/22;7:98am;22.07;4b;43;9
+T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;2A;Gold;OKU;20.12;online
+T2;2/4/2023;Ipoh;Tapah Road;11:30;15:34;2h 11m;3A;Gold;Student;13;cash
