@@ -553,17 +553,19 @@ int size;
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
         new BuyTicket().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonEditActionPerformed
 
     private void jButtonMakePaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMakePaymentActionPerformed
         new PaymentPage().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButtonMakePaymentActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */
