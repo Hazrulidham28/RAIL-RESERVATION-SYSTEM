@@ -20,11 +20,7 @@ public class RegisterationForm extends javax.swing.JFrame {
     public String Password;
     private boolean passData=true;
     public String status;
-    
-    
    
-    
-
     /**
      * Creates new form RegisterationForm
      */
