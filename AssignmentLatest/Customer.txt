@@ -1,8 +1,0 @@
-Customer ID,Customer name,Phone Number,Birthday
-123;Izhmin;019238242;22/01/2001
-4334;John;016553782;9/10/1999
-099;Ahmad;011664522;10/8/2002
-1231;awfafa;fafawf;awfa
-456;Ali;0123841;12/01/2008
-
-1431;Akmal;01948432;9/2/1997
