@@ -15,7 +15,10 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
-import javax.swing.JFrame;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
+
 
 
 /**
@@ -46,8 +49,6 @@ public class PaymentPage extends javax.swing.JFrame {
          
         initComponents();
         
-            
-           
     }
    
     
@@ -205,11 +206,12 @@ public class PaymentPage extends javax.swing.JFrame {
 
     private void CreditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditButtonActionPerformed
         paymentType = payConfirmBank();
+        AppendPayType(paymentType);
     }//GEN-LAST:event_CreditButtonActionPerformed
 
     private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
-        
-        String filePath = "C:\\Users\\alifs\\Desktop\\TicketDetails.txt";//will be changed soon
+        //based on seating page
+        String filePath = "";//will be inserted later
         File file = new File(filePath);
         
         try{
@@ -218,7 +220,7 @@ public class PaymentPage extends javax.swing.JFrame {
            //trim() eliminates the leading and trailing spaces
            String firstLine = br.readLine().trim();
            //get the column's name from the first row
-           String[] columnsName = firstLine.split(";");
+           String[] columnsName = {"Type","Origin","Destination","F"};//choose specific fields based on specified txt file
            //set columns name to the jtable model
            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
            tableModel.setColumnIdentifiers(columnsName);
@@ -247,6 +249,7 @@ public class PaymentPage extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         paymentType = payConfirmOnline();
+        AppendPayType(paymentType);
         
 
     }//GEN-LAST:event_OnlineBankButtonActionPerformed
@@ -297,6 +300,34 @@ public class PaymentPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Credit card payment is cancelled.");
         }
         return PC;
+    }
+    public void AppendPayType(String p){
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        PrintWriter pw = null;
+        
+        try{
+            //also based on seating page
+            fw = new FileWriter("CurrentSchedules.txt",true);//the txt file may change later 
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);
+            //append the payment type var to the file 
+            pw.print(p + ";");
+            pw.flush();
+        }
+        catch(IOException io){
+            
+        }
+        finally{
+            try{
+                pw.close();
+                bw.close();
+                fw.close();
+            }
+            catch(IOException io){
+                
+            }
+        }
     }
     /**
      * @param args the command line arguments
