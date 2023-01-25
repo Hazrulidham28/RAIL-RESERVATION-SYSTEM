@@ -1,1 +1,1 @@
-T2;15/3/2023;Sungai Petani;Rawang;11:33;15:20;3h 47m;A1;Platinum;Student;RM 44.10;;
+T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;A2;Platinum;Senior Citizen;RM 22.50;Online Bank;

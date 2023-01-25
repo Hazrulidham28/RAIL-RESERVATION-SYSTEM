@@ -37,6 +37,7 @@ public class StartUp extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EXIT.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        EXIT.setForeground(new java.awt.Color(255, 0, 0));
         EXIT.setText("EXIT");
         EXIT.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         EXIT.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +48,7 @@ public class StartUp extends javax.swing.JFrame {
         getContentPane().add(EXIT, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 490, 80, 30));
 
         LOGIN.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        LOGIN.setForeground(new java.awt.Color(0, 29, 110));
         LOGIN.setText("LOGIN");
         LOGIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,6 +58,7 @@ public class StartUp extends javax.swing.JFrame {
         getContentPane().add(LOGIN, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 140, 60));
 
         REGISTER.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        REGISTER.setForeground(new java.awt.Color(0, 29, 110));
         REGISTER.setText("REGISTER");
         REGISTER.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

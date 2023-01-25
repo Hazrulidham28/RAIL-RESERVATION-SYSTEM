@@ -75,6 +75,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 255));
@@ -204,7 +205,7 @@ public class LoginForm extends javax.swing.JFrame {
                 jButtonLoginActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 351, 122, 32));
+        jPanel1.add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, 122, 32));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 29, 110));
@@ -249,6 +250,17 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon&Pics/rsz_299105_lock_icon.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 280, -1, -1));
+
+        jButton2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 29, 110));
+        jButton2.setText("Register");
+        jButton2.setBorder(null);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 120, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -321,6 +333,13 @@ public class LoginForm extends javax.swing.JFrame {
         this.setState(1);
         
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        RegisterationForm reg = new RegisterationForm();
+        reg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
     //method to check the boolean value
     public void getAuthent(){
         //open file reader
@@ -449,6 +468,7 @@ public class LoginForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -477,7 +497,7 @@ public LoginForm(String email, String pass, String name,String ic,String Gender,
     this.CurrGender=Gender;
     this.CurrContact=phone;
     this.Currstatus=stat;
-    JOptionPane.showMessageDialog(null,this.CurrGender);
+    //JOptionPane.showMessageDialog(null,this.CurrGender);
    
 }
 }

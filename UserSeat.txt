@@ -1,1 +1,1 @@
-T2;A1;Platinum;RM 44.10;
+T1;A2;Platinum;RM 22.50;

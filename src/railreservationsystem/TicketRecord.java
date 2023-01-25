@@ -24,7 +24,7 @@ public class TicketRecord extends javax.swing.JFrame {
     private String Seat;
     private String Category;
     private String Status;
-    private double Price;
+    private String Price;
     private String PayType;
     /**
      * Creates new form TicketRecord
@@ -622,9 +622,9 @@ public class TicketRecord extends javax.swing.JFrame {
                 String status = tk.nextToken();
                 String price = tk.nextToken();
                 String paytype = tk.nextToken();
-                double p = Double.parseDouble(price);
+                
 
-                Object[] rec = {code, date, origin, destination, depature, arrival, duration, seat, category, status, p, paytype};
+                Object[] rec = {code, date, origin, destination, depature, arrival, duration, seat, category, status, price, paytype};
 
                 moder.addRow(rec);
             }

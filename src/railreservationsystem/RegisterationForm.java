@@ -93,7 +93,6 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
 
         jTextIc.setBackground(new java.awt.Color(254, 226, 197));
-        jTextIc.setForeground(new java.awt.Color(255, 255, 255));
         jTextIc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextIcActionPerformed(evt);
