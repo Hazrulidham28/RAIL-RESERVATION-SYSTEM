@@ -1,1 +1,1 @@
-T1;A3;Gold;RM 30.40;
+T2;A1;Platinum;RM 44.10;

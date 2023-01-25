@@ -66,6 +66,7 @@ public class StartUp extends javax.swing.JFrame {
 
         LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon&Pics/StartUpLogo1.jpg"))); // NOI18N
         LOGO.setText("jLabel2");
+        LOGO.setPreferredSize(new java.awt.Dimension(1000, 566));
         getContentPane().add(LOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 570));
 
         pack();

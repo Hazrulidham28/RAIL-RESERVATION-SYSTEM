@@ -54,6 +54,7 @@ public class MainMenu extends javax.swing.JFrame {
         jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel3.setBackground(new java.awt.Color(0, 29, 110));
 
@@ -63,7 +64,10 @@ public class MainMenu extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 992, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 992, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -72,11 +76,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(0, 70, Short.MAX_VALUE))
         );
 
-        jMenuBar2.setBackground(new java.awt.Color(0, 29, 110));
         jMenuBar2.setForeground(new java.awt.Color(0, 29, 110));
         jMenuBar2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
 
-        jMenu3.setBackground(new java.awt.Color(0, 29, 110));
         jMenu3.setForeground(new java.awt.Color(0, 29, 110));
         jMenu3.setText("                        ETS Ticket                              ");
         jMenu3.setActionCommand("                      ETS Ticket                         ");
@@ -177,6 +179,7 @@ public class MainMenu extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null , logout);
         
         new LoginForm().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**

@@ -1,1 +1,1 @@
-T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;25.0;32.0;
+T2;15/3/2023;Sungai Petani;Rawang;11:33;15:20;3h 47m;49.0;56.0;
