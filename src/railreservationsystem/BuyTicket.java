@@ -177,7 +177,7 @@ public class BuyTicket extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Code", "Date", "Origin", "Destination", "Departure", "Arrival", "Duration", "Fare Platinum", "Fare Gold"
+                "Ticket Code", "Date", "Origin", "Destination", "Departure", "Arrival", "Duration", "Fare Platinum", "Fare Gold"
             }
         ));
         jTable1.setRowHeight(40);
@@ -294,7 +294,7 @@ public class BuyTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void ChooseSeatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChooseSeatButtonActionPerformed
-        new SeatingPage().setVisible(true);
+        new ChooseSeat().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ChooseSeatButtonActionPerformed
 
