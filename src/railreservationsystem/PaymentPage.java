@@ -86,6 +86,8 @@ public class PaymentPage extends javax.swing.JFrame {
         panel3 = new java.awt.Panel();
         label2 = new java.awt.Label();
         ShowDetailButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         panel5 = new java.awt.Panel();
         CreditButton = new java.awt.Button();
         OnlineBankButton = new java.awt.Button();
@@ -107,7 +109,8 @@ public class PaymentPage extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1000, 565));
+        setMinimumSize(new java.awt.Dimension(1180, 565));
+        setUndecorated(true);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -156,12 +159,30 @@ public class PaymentPage extends javax.swing.JFrame {
         label2.setForeground(new java.awt.Color(254, 226, 197));
         label2.setText("ORDER/PAYMENT");
 
-        ShowDetailButton.setBackground(new java.awt.Color(255, 204, 51));
         ShowDetailButton.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        ShowDetailButton.setForeground(new java.awt.Color(0, 29, 110));
         ShowDetailButton.setText("SHOW DETAILS");
         ShowDetailButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ShowDetailButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(254, 226, 197));
+        jLabel1.setText("X");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(254, 226, 197));
+        jLabel2.setText("-");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
             }
         });
 
@@ -170,21 +191,27 @@ public class PaymentPage extends javax.swing.JFrame {
         panel3Layout.setHorizontalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
-                .addContainerGap(417, Short.MAX_VALUE)
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(194, 194, 194)
+                .addGap(61, 61, 61)
                 .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(300, 300, 300)
+                .addComponent(jLabel2)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addGap(15, 15, 15))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(panel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -193,8 +220,9 @@ public class PaymentPage extends javax.swing.JFrame {
 
         panel5.setLayout(new java.awt.GridLayout(1, 0));
 
-        CreditButton.setBackground(new java.awt.Color(255, 204, 51));
+        CreditButton.setBackground(new java.awt.Color(255, 255, 255));
         CreditButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        CreditButton.setForeground(new java.awt.Color(0, 29, 110));
         CreditButton.setLabel("Credit Card");
         CreditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,8 +231,9 @@ public class PaymentPage extends javax.swing.JFrame {
         });
         panel5.add(CreditButton);
 
-        OnlineBankButton.setBackground(new java.awt.Color(255, 204, 51));
+        OnlineBankButton.setBackground(new java.awt.Color(255, 255, 255));
         OnlineBankButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        OnlineBankButton.setForeground(new java.awt.Color(0, 29, 110));
         OnlineBankButton.setLabel("Online Banking");
         OnlineBankButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -376,6 +405,17 @@ public class PaymentPage extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_ShowDetailButtonActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        this.setState(1);
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     public String payType(String pay){
         String p="";
@@ -554,6 +594,8 @@ public class PaymentPage extends javax.swing.JFrame {
     private java.awt.Button CreditButton;
     private java.awt.Button OnlineBankButton;
     private javax.swing.JButton ShowDetailButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

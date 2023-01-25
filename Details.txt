@@ -1,2 +1,1 @@
-T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;2A;Gold;OKU;20.12;online
-T2;2/4/2023;Ipoh;Tapah Road;11:30;15:34;2h 11m;3A;Gold;Student;13;cash
+T2;15/3/2023;Sungai Petani;Rawang;11:33;15:20;3h 47m;A1;Platinum;Student;RM 44.10;;
