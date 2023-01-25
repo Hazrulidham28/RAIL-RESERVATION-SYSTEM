@@ -235,6 +235,12 @@ public class LoginForm extends javax.swing.JFrame {
                  JOptionPane.showMessageDialog(null,"Successfully login!");
                  //create txt file for acc details
                  setCustomerdata();
+                 MainMenu menu = new MainMenu();
+                 
+                 menu.setVisible(true);
+                 this.dispose();
+                 
+                 
                  
                  
              }
