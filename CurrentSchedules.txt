@@ -1,1 +1,1 @@
-T3;7/4/2023;Gemas;Padang Besar;8:05;16:33;8h 28m;90.0;97.0;
+T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;25.0;32.0;
