@@ -209,7 +209,7 @@ public class RegisterationForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 226, 197));
-        jLabel1.setText("REGISTERATION");
+        jLabel1.setText("REGISTRATION");
 
         jLabel5.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(254, 226, 197));
@@ -238,7 +238,7 @@ public class RegisterationForm extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addGap(263, 263, 263)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
                 .addComponent(jLabel6)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel5)

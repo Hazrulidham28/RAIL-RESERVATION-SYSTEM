@@ -31,7 +31,7 @@ public class TicketRecord extends javax.swing.JFrame {
      */
     public TicketRecord() {
         initComponents();
-        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+        //setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         ReadRecord();
     }
 
@@ -65,8 +65,9 @@ public class TicketRecord extends javax.swing.JFrame {
         recPrice = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        Exit = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Back_Menu = new javax.swing.JButton();
         recCode = new javax.swing.JTextField();
@@ -84,6 +85,7 @@ public class TicketRecord extends javax.swing.JFrame {
         jLabel12.setText("Date");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         RecordTable.setBackground(new java.awt.Color(255, 255, 204));
         RecordTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -213,18 +215,25 @@ public class TicketRecord extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(254, 226, 197));
         jLabel9.setText("Ticket History");
 
-        Exit.setBackground(new java.awt.Color(254, 226, 197));
-        Exit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        Exit.setForeground(new java.awt.Color(0, 29, 110));
-        Exit.setText("Exit");
-        Exit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        Exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon&Pics/logo1.png"))); // NOI18N
+
+        jLabel16.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(254, 226, 197));
+        jLabel16.setText("X");
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
             }
         });
 
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon&Pics/logo1.png"))); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Tw Cen MT", 1, 36)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(254, 226, 197));
+        jLabel17.setText("-");
+        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel17MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -233,23 +242,24 @@ public class TicketRecord extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(301, 301, 301)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addComponent(jLabel17)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel16)
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Exit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel15)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel15)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(jLabel17)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -491,6 +501,7 @@ public class TicketRecord extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -545,11 +556,6 @@ public class TicketRecord extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_recPriceActionPerformed
 
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_ExitActionPerformed
-
     private void Back_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_MenuActionPerformed
         new MainMenu().setVisible(true);
         this.dispose();
@@ -578,6 +584,16 @@ public class TicketRecord extends javax.swing.JFrame {
     private void recSeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recSeatActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_recSeatActionPerformed
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
+        // TODO add your handling code here:
+        this.setState(1);
+    }//GEN-LAST:event_jLabel17MouseClicked
 
     private void ReadRecord(){
         try{
@@ -656,7 +672,6 @@ public class TicketRecord extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back_Menu;
-    private javax.swing.JButton Exit;
     private javax.swing.JTable RecordTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -665,6 +680,8 @@ public class TicketRecord extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
