@@ -133,7 +133,7 @@ int size;
         }
     public void readUserSeating(){
         try{
-            FileReader readUser = new FileReader("currentuserSeat.txt");
+            FileReader readUser = new FileReader("UserSeat.txt");
             BufferedReader br = new BufferedReader(readUser);
             
             String input;
@@ -142,18 +142,14 @@ int size;
                 {
                     StringTokenizer st = new StringTokenizer (input,";");
                     
-                    
+                    String code = st.nextToken();
                     String seat = st.nextToken();
                     String category = st.nextToken();
+                    String finalFare = st.nextToken();
                     
                     jLabelSeat.setText(seat);
                     jLabelCategory.setText(category);
-                    
-                    if(category.equalsIgnoreCase("Platinum"))
-                        jLabelFare.setText(pPlatinum);
-                    else if(category.equalsIgnoreCase("Gold"))
-                        jLabelFare.setText(pGold);
-               
+                    jLabelFare.setText(finalFare);
                     
                 }
                 readUser.close();
@@ -199,7 +195,6 @@ int size;
         jLabelName = new javax.swing.JLabel();
         jLabelContact = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabelRM = new javax.swing.JLabel();
         jLabelFare = new javax.swing.JLabel();
         jLabelDestination = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
@@ -383,9 +378,6 @@ int size;
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel9.setText("FARE:");
 
-        jLabelRM.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabelRM.setText("RM");
-
         jLabelFare.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabelFare.setText("0");
 
@@ -405,10 +397,8 @@ int size;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelRM)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelFare)
-                .addGap(84, 84, 84))
+                .addGap(108, 108, 108))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -422,7 +412,6 @@ int size;
                     .addComponent(jLabel8)
                     .addComponent(jLabelContact)
                     .addComponent(jLabel9)
-                    .addComponent(jLabelRM)
                     .addComponent(jLabelFare))
                 .addGap(0, 28, Short.MAX_VALUE))
         );
@@ -626,7 +615,6 @@ int size;
     private javax.swing.JLabel jLabelFare;
     private javax.swing.JLabel jLabelName;
     public javax.swing.JLabel jLabelOrigin;
-    private javax.swing.JLabel jLabelRM;
     private javax.swing.JLabel jLabelSeat;
     private javax.swing.JLabel jLabelStatus;
     private javax.swing.JPanel jPanel1;

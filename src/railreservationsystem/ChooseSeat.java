@@ -6,6 +6,7 @@ package railreservationsystem;
 
 import java.io.FileNotFoundException;
 import java.io.*;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 import java.util.logging.Level;
@@ -32,6 +33,7 @@ public class ChooseSeat extends javax.swing.JFrame {
     private String userCategory;
     private String userStatus;
     private double latestPrice;
+    DecimalFormat dc = new DecimalFormat("RM 0.00");
     
     
     
@@ -626,7 +628,7 @@ public class ChooseSeat extends javax.swing.JFrame {
             outFile.print(code+";");
             outFile.print(userSeat+";");
             outFile.print(userCategory+";");
-            outFile.print(latestPrice+";");
+            outFile.print(dc.format(latestPrice)+";");
             
             inFile.close();
             outFile.close();
@@ -636,8 +638,7 @@ public class ChooseSeat extends javax.swing.JFrame {
         }
         
         JOptionPane.showMessageDialog(null, "Seat has been selected");
-        PaymentPage pp = new PaymentPage();
-        pp.setVisible(true);
+        new TicketDetails().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ProceedActionPerformed
 
