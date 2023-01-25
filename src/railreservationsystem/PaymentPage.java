@@ -17,6 +17,7 @@ import java.io.FileReader;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.util.StringTokenizer;
 
 
 
@@ -36,11 +37,25 @@ import java.io.PrintWriter;
     
 
 public class PaymentPage extends javax.swing.JFrame {
-
-    public String type;
-    public String origin;
-    public String destination;
-    public double fare;
+    //to store data from CurrentSchedules.txt
+    String code;
+    String date;
+    String origin;
+    String destination;
+    String departure;
+    String arrival;
+    String duration;
+    String pPlatinum;
+    String pGold; 
+    
+   //to store data from UserSeat.txt
+    String trainCode;
+    String Seat;
+    String trainType;//category
+    String fare;
+    
+    String status;
+    //to create file "Details.txt"
     public String paymentType;
     /**
      * Creates new form PaymentPage
@@ -63,26 +78,33 @@ public class PaymentPage extends javax.swing.JFrame {
     private void initComponents() {
 
         panel8 = new java.awt.Panel();
-        panel1 = new java.awt.Panel();
+        jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
         label1 = new java.awt.Label();
-        panel2 = new java.awt.Panel();
         panel3 = new java.awt.Panel();
         label2 = new java.awt.Label();
-        panel4 = new java.awt.Panel();
+        ShowDetailButton = new javax.swing.JButton();
         panel5 = new java.awt.Panel();
         CreditButton = new java.awt.Button();
         OnlineBankButton = new java.awt.Button();
-        panel6 = new java.awt.Panel();
-        panel7 = new java.awt.Panel();
-        panel9 = new java.awt.Panel();
-        panel10 = new java.awt.Panel();
-        ShowDetailButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 565));
@@ -93,10 +115,6 @@ public class PaymentPage extends javax.swing.JFrame {
         });
         getContentPane().setLayout(null);
 
-        panel1.setBackground(new java.awt.Color(51, 51, 255));
-        getContentPane().add(panel1);
-        panel1.setBounds(10, 0, 660, 30);
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane3.setViewportView(jTextArea1);
@@ -104,35 +122,79 @@ public class PaymentPage extends javax.swing.JFrame {
         getContentPane().add(jScrollPane3);
         jScrollPane3.setBounds(0, 30, 640, 0);
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel6.add(jPanel7);
+        jPanel6.setBackground(new java.awt.Color(0, 29, 110));
 
+        label1.setFont(new java.awt.Font("Trebuchet MS", 1, 24)); // NOI18N
+        label1.setForeground(new java.awt.Color(254, 226, 197));
         label1.setText("Payment Options");
-        jPanel6.add(label1);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(430, 430, 430)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(640, 640, 640))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
+        );
 
         getContentPane().add(jPanel6);
-        jPanel6.setBounds(40, 300, 590, 30);
+        jPanel6.setBounds(60, 310, 1060, 60);
 
-        panel2.setBackground(new java.awt.Color(0, 51, 255));
-        getContentPane().add(panel2);
-        panel2.setBounds(0, 30, 40, 30);
-
+        panel3.setBackground(new java.awt.Color(0, 29, 110));
         panel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
 
         label2.setAlignment(java.awt.Label.CENTER);
-        label2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label2.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        label2.setForeground(new java.awt.Color(254, 226, 197));
         label2.setText("ORDER/PAYMENT");
-        panel3.add(label2);
+
+        ShowDetailButton.setBackground(new java.awt.Color(255, 204, 51));
+        ShowDetailButton.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        ShowDetailButton.setText("SHOW DETAILS");
+        ShowDetailButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowDetailButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
+        panel3.setLayout(panel3Layout);
+        panel3Layout.setHorizontalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addContainerGap(417, Short.MAX_VALUE)
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(194, 194, 194)
+                .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+        );
+        panel3Layout.setVerticalGroup(
+            panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(panel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
 
         getContentPane().add(panel3);
-        panel3.setBounds(40, 30, 190, 30);
-
-        panel4.setBackground(new java.awt.Color(0, 51, 255));
-        getContentPane().add(panel4);
-        panel4.setBounds(630, 30, 40, 30);
+        panel3.setBounds(0, 0, 1180, 70);
 
         panel5.setLayout(new java.awt.GridLayout(1, 0));
 
+        CreditButton.setBackground(new java.awt.Color(255, 204, 51));
+        CreditButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         CreditButton.setLabel("Credit Card");
         CreditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,6 +203,8 @@ public class PaymentPage extends javax.swing.JFrame {
         });
         panel5.add(CreditButton);
 
+        OnlineBankButton.setBackground(new java.awt.Color(255, 204, 51));
+        OnlineBankButton.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         OnlineBankButton.setLabel("Online Banking");
         OnlineBankButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,45 +214,11 @@ public class PaymentPage extends javax.swing.JFrame {
         panel5.add(OnlineBankButton);
 
         getContentPane().add(panel5);
-        panel5.setBounds(40, 330, 590, 100);
+        panel5.setBounds(60, 370, 1060, 120);
 
-        panel6.setBackground(new java.awt.Color(0, 51, 255));
-        getContentPane().add(panel6);
-        panel6.setBounds(0, 60, 40, 400);
-
-        panel7.setBackground(new java.awt.Color(0, 51, 255));
-        getContentPane().add(panel7);
-        panel7.setBounds(630, 60, 40, 400);
-
-        panel9.setBackground(new java.awt.Color(0, 51, 255));
-        getContentPane().add(panel9);
-        panel9.setBounds(40, 430, 590, 30);
-
-        ShowDetailButton.setBackground(new java.awt.Color(255, 204, 51));
-        ShowDetailButton.setText("SHOW DETAILS");
-        ShowDetailButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowDetailButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panel10Layout = new javax.swing.GroupLayout(panel10);
-        panel10.setLayout(panel10Layout);
-        panel10Layout.setHorizontalGroup(
-            panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel10Layout.createSequentialGroup()
-                .addContainerGap(281, Short.MAX_VALUE)
-                .addComponent(ShowDetailButton)
-                .addContainerGap())
-        );
-        panel10Layout.setVerticalGroup(
-            panel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(ShowDetailButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(panel10);
-        panel10.setBounds(230, 30, 400, 30);
-
+        jTable1.setBackground(new java.awt.Color(254, 226, 197));
+        jTable1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(0, 29, 110));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -200,59 +230,77 @@ public class PaymentPage extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(40, 60, 590, 240);
+        jScrollPane1.setBounds(60, 70, 1060, 240);
+
+        jPanel1.setBackground(new java.awt.Color(196, 221, 255));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 70, 60, 470);
+
+        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 60, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel2);
+        jPanel2.setBounds(1120, 70, 60, 470);
+
+        jPanel4.setBackground(new java.awt.Color(196, 221, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1060, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 50, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel4);
+        jPanel4.setBounds(60, 490, 1060, 50);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CreditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreditButtonActionPerformed
+        status = readUserDetails();
         paymentType = payConfirmBank();
+        CreateDetailFile(code,date,origin,destination,departure,arrival,duration,Seat,trainType,status,fare);
         AppendPayType(paymentType);
+         new TicketRecord().setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_CreditButtonActionPerformed
-
-    private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
-        //based on seating page
-        String filePath = "";//will be inserted later
-        File file = new File(filePath);
-        
-        try{
-           BufferedReader br = new BufferedReader(new FileReader(file));
-           //get first line
-           //trim() eliminates the leading and trailing spaces
-           String firstLine = br.readLine().trim();
-           //get the column's name from the first row
-           String[] columnsName = {"Type","Origin","Destination","F"};//choose specific fields based on specified txt file
-           //set columns name to the jtable model
-           DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
-           tableModel.setColumnIdentifiers(columnsName);
-            
-           // get lines from txt file
-            Object[] tableLines = br.lines().toArray();
-            
-           //extract data from lines
-           //set data to jtable model
-           for(int i =0; i<tableLines.length;i++){
-               String line = tableLines[i].toString().trim();
-               String[] dataRow = line.split(";");
-               tableModel.addRow(dataRow);
-           }
-           
-        }   catch(Exception ex){
-            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex); 
-            JOptionPane.showMessageDialog(null,"The details for your ticket does not exist.");
-        }
-        
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ShowDetailButtonActionPerformed
 
     private void OnlineBankButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnlineBankButtonActionPerformed
         // TODO add your handling code here:
-
+        status = readUserDetails();
         paymentType = payConfirmOnline();
+        CreateDetailFile(code,date,origin,destination,departure,arrival,duration,Seat,trainType,status,fare);
         AppendPayType(paymentType);
-        
+        new TicketRecord().setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_OnlineBankButtonActionPerformed
 
@@ -261,13 +309,81 @@ public class PaymentPage extends javax.swing.JFrame {
         //        setExtendedState(JFrame.MAXIMISED_BOTH);
     }//GEN-LAST:event_formWindowOpened
 
+    private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
+        //based on ChooseSeat page
+        //CurrentSchedules.txt to get data
+        //get data train code, Origin, Destination
+        String filePath = "CurrentSchedules.txt";
+        //based on UserSeat page
+        //get data about Train Category, Price
+        String filePath2 = "UserSeat.txt";
+        File file1 = new File(filePath);
+        File file2 = new File(filePath2);
+        
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file1));
+            
+            //Set the column's name 
+            String[] columnsName = {"Train Code","Origin","Destination","Train Cateogory","Fare"};
+            //set columns name to the jtable model
+            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
+            tableModel.setColumnIdentifiers(columnsName);
+             
+             
+            String input;
+           
+            while((input = br.readLine()) != null){
+                StringTokenizer st = new StringTokenizer(input,";");
+                    code = st.nextToken();
+                    date = st.nextToken();
+                    origin = st.nextToken();
+                    destination = st.nextToken();
+                    departure = st.nextToken();
+                    arrival = st.nextToken();
+                    duration = st.nextToken();
+                    pPlatinum = st.nextToken();
+                    pGold = st.nextToken();
+                
+             
+            }
+                
+            BufferedReader BR = new BufferedReader(new FileReader(file2));
+            String Input;
+            
+            while((Input = BR.readLine()) != null){
+                StringTokenizer ST = new StringTokenizer(Input, ";");
+                    trainCode = ST.nextToken();
+                    Seat = ST.nextToken();
+                    trainType = ST.nextToken();
+                    fare = ST.nextToken();
+                    
+                                
+            }
+            
+           String[] dataRow = {code,origin,destination};
+           String[] dataRow2 = {trainType, fare};
+           String[] AllData = {dataRow[0],dataRow[1],dataRow[2],dataRow2[0],dataRow2[1]};
+           tableModel.addRow(AllData);
+             
+
+        }   catch(Exception ex){
+            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex);
+            JOptionPane.showMessageDialog(null,"The details for your ticket does not exist.");
+        }
+        
+      
+     
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ShowDetailButtonActionPerformed
+
     public String payType(String pay){
         String p="";
         if(pay.equalsIgnoreCase("Online Bank")){
-            p= "Payment: Online Bank";
+            p= "Online Bank";
         }
         else if(pay.equalsIgnoreCase("Credit Card")){
-            p= "Payment: Credit Card";
+            p= "Credit Card";
         }
         return p;
     }
@@ -309,8 +425,8 @@ public class PaymentPage extends javax.swing.JFrame {
         PrintWriter pw = null;
         
         try{
-            //also based on seating page
-            fw = new FileWriter("CurrentSchedules.txt",true);//the txt file may change later 
+           
+            fw = new FileWriter("Details.txt",true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw);
             //append the payment type var to the file 
@@ -331,6 +447,69 @@ public class PaymentPage extends javax.swing.JFrame {
             }
         }
     }
+      public String readUserDetails(){
+        String response = "";
+        try{
+            FileReader readUser = new FileReader("currentuser.txt");
+            BufferedReader br = new BufferedReader(readUser);
+            
+            String input;
+                
+                while((input = br.readLine()) != null)
+                {
+                    StringTokenizer st = new StringTokenizer (input,";");
+                    
+                    
+                    String email = st.nextToken();
+                    String password = st.nextToken();
+                    String name = st.nextToken();
+                    String icNum = st.nextToken();
+                    String gender = st.nextToken();
+                    String contact = st.nextToken();
+                    String status = st.nextToken();
+                   
+                    response = status;
+                }
+                readUser.close();
+                
+                }
+            catch (FileNotFoundException ex) {
+                Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
+            }    
+            catch (IOException ex) {
+                Logger.getLogger(BuyTicket.class.getName()).log(Level.SEVERE, null, ex);
+            }
+         return response;
+        }
+    
+    public void CreateDetailFile(String Code,String Date,String Origin, String Destination, String Departure, String Arrival, String Duration, String Seat,String Category,String Status, String Fare){
+           try{
+                FileWriter inFile = new FileWriter("Details.txt");
+                PrintWriter outFile = new PrintWriter(inFile);
+                
+                outFile.print(Code+";");
+                outFile.print(Date + ";");
+                outFile.print(Origin + ";");
+                outFile.print(Destination+";");
+                outFile.print(Departure + ";");
+                outFile.print(Arrival + ";");
+                outFile.print(Duration +";");
+                outFile.print(Seat + ";");
+                outFile.print(Category+";");
+                outFile.print(Status + ";");
+                outFile.print(Fare + ";");
+                //price data will be appended later
+                outFile.close();
+               }
+           
+           catch (FileNotFoundException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
+
     /**
      * @param args the command line arguments
      */
@@ -375,24 +554,20 @@ public class PaymentPage extends javax.swing.JFrame {
     private java.awt.Button CreditButton;
     private java.awt.Button OnlineBankButton;
     private javax.swing.JButton ShowDetailButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextArea jTextArea1;
     private java.awt.Label label1;
     private java.awt.Label label2;
-    private java.awt.Panel panel1;
-    private java.awt.Panel panel10;
-    private java.awt.Panel panel2;
     private java.awt.Panel panel3;
-    private java.awt.Panel panel4;
     private java.awt.Panel panel5;
-    private java.awt.Panel panel6;
-    private java.awt.Panel panel7;
     private java.awt.Panel panel8;
-    private java.awt.Panel panel9;
     // End of variables declaration//GEN-END:variables
 }
 
