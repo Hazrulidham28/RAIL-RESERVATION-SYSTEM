@@ -33,6 +33,7 @@ public class StartUp extends javax.swing.JFrame {
         LOGO = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         EXIT.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -68,6 +69,7 @@ public class StartUp extends javax.swing.JFrame {
         getContentPane().add(LOGO, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 570));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
