@@ -47,22 +47,6 @@ public class TicketRecord extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         RecordTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        recOrigin = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        recDestination = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        recArrival = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        recDuration = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        recSeat = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        recCategory = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        recStatus = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        recPrice = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -70,16 +54,31 @@ public class TicketRecord extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         Back_Menu = new javax.swing.JButton();
-        recCode = new javax.swing.JTextField();
-        recDate = new javax.swing.JTextField();
-        recPayType = new javax.swing.JTextField();
-        recDepature = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        recCode = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        recOrigin = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        recDepature = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        recDuration = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        recCategory = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        recPrice = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        recDate = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        recDestination = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        recArrival = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        recStatus = new javax.swing.JTextField();
+        recPayType = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        recSeat = new javax.swing.JTextField();
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel12.setText("Date");
@@ -114,101 +113,6 @@ public class TicketRecord extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(RecordTable);
 
-        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel1.setText("Origin");
-
-        recOrigin.setEditable(false);
-        recOrigin.setBackground(new java.awt.Color(255, 255, 204));
-        recOrigin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recOrigin.setForeground(new java.awt.Color(0, 29, 110));
-        recOrigin.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recOrigin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recOriginActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel2.setText("Destination");
-
-        recDestination.setBackground(new java.awt.Color(255, 255, 204));
-        recDestination.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recDestination.setForeground(new java.awt.Color(0, 29, 110));
-        recDestination.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel3.setText("Arrival");
-
-        recArrival.setBackground(new java.awt.Color(255, 255, 204));
-        recArrival.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recArrival.setForeground(new java.awt.Color(0, 29, 110));
-        recArrival.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recArrival.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recArrivalActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel4.setText("Duration");
-
-        recDuration.setBackground(new java.awt.Color(255, 255, 204));
-        recDuration.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recDuration.setForeground(new java.awt.Color(0, 29, 110));
-        recDuration.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recDuration.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recDurationActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel5.setText("Seat");
-
-        recSeat.setBackground(new java.awt.Color(255, 255, 204));
-        recSeat.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recSeat.setForeground(new java.awt.Color(0, 29, 110));
-        recSeat.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recSeat.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recSeatActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel6.setText("Category");
-
-        recCategory.setBackground(new java.awt.Color(255, 255, 204));
-        recCategory.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recCategory.setForeground(new java.awt.Color(0, 29, 110));
-        recCategory.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-
-        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel7.setText("Status ");
-
-        recStatus.setBackground(new java.awt.Color(255, 255, 204));
-        recStatus.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recStatus.setForeground(new java.awt.Color(0, 29, 110));
-        recStatus.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recStatus.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recStatusActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel8.setText("Price");
-
-        recPrice.setBackground(new java.awt.Color(255, 255, 204));
-        recPrice.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recPrice.setForeground(new java.awt.Color(0, 29, 110));
-        recPrice.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recPrice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recPriceActionPerformed(evt);
-            }
-        });
-
         jPanel1.setBackground(new java.awt.Color(0, 29, 110));
 
         jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 30)); // NOI18N
@@ -242,24 +146,24 @@ public class TicketRecord extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(jLabel15)
-                .addGap(301, 301, 301)
+                .addGap(205, 205, 205)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(368, 368, 368)
                 .addComponent(jLabel17)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel16)
-                .addGap(16, 16, 16))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
                     .addComponent(jLabel15)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel17)
                         .addComponent(jLabel16)
-                        .addComponent(jLabel17)))
+                        .addComponent(jLabel9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -293,6 +197,12 @@ public class TicketRecord extends javax.swing.JFrame {
                 .addGap(15, 15, 15))
         );
 
+        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
+
+        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel10.setText("Train Code");
+
+        recCode.setEditable(false);
         recCode.setBackground(new java.awt.Color(255, 255, 204));
         recCode.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         recCode.setForeground(new java.awt.Color(0, 29, 110));
@@ -303,26 +213,24 @@ public class TicketRecord extends javax.swing.JFrame {
             }
         });
 
-        recDate.setBackground(new java.awt.Color(255, 255, 204));
-        recDate.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recDate.setForeground(new java.awt.Color(0, 29, 110));
-        recDate.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recDate.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel1.setText("Origin");
+
+        recOrigin.setEditable(false);
+        recOrigin.setBackground(new java.awt.Color(255, 255, 204));
+        recOrigin.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recOrigin.setForeground(new java.awt.Color(0, 29, 110));
+        recOrigin.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recOrigin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recDateActionPerformed(evt);
+                recOriginActionPerformed(evt);
             }
         });
 
-        recPayType.setBackground(new java.awt.Color(255, 255, 204));
-        recPayType.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        recPayType.setForeground(new java.awt.Color(0, 29, 110));
-        recPayType.setDisabledTextColor(new java.awt.Color(0, 29, 110));
-        recPayType.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recPayTypeActionPerformed(evt);
-            }
-        });
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel13.setText("Departure");
 
+        recDepature.setEditable(false);
         recDepature.setBackground(new java.awt.Color(255, 255, 204));
         recDepature.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         recDepature.setForeground(new java.awt.Color(0, 29, 110));
@@ -334,40 +242,214 @@ public class TicketRecord extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel10.setText("Train Code");
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel4.setText("Duration");
 
-        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recDuration.setEditable(false);
+        recDuration.setBackground(new java.awt.Color(255, 255, 204));
+        recDuration.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recDuration.setForeground(new java.awt.Color(0, 29, 110));
+        recDuration.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recDuration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recDurationActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel6.setText("Category");
+
+        recCategory.setEditable(false);
+        recCategory.setBackground(new java.awt.Color(255, 255, 204));
+        recCategory.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recCategory.setForeground(new java.awt.Color(0, 29, 110));
+        recCategory.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel8.setText("Price");
+
+        recPrice.setEditable(false);
+        recPrice.setBackground(new java.awt.Color(255, 255, 204));
+        recPrice.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recPrice.setForeground(new java.awt.Color(0, 29, 110));
+        recPrice.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recPriceActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel11.setText("Date");
 
-        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabel13.setText("Depature");
+        recDate.setEditable(false);
+        recDate.setBackground(new java.awt.Color(255, 255, 204));
+        recDate.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recDate.setForeground(new java.awt.Color(0, 29, 110));
+        recDate.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recDateActionPerformed(evt);
+            }
+        });
 
-        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel2.setText("Destination");
+
+        recDestination.setEditable(false);
+        recDestination.setBackground(new java.awt.Color(255, 255, 204));
+        recDestination.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recDestination.setForeground(new java.awt.Color(0, 29, 110));
+        recDestination.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel3.setText("Arrival");
+
+        recArrival.setEditable(false);
+        recArrival.setBackground(new java.awt.Color(255, 255, 204));
+        recArrival.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recArrival.setForeground(new java.awt.Color(0, 29, 110));
+        recArrival.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recArrival.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recArrivalActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel5.setText("Seat");
+
+        recStatus.setEditable(false);
+        recStatus.setBackground(new java.awt.Color(255, 255, 204));
+        recStatus.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recStatus.setForeground(new java.awt.Color(0, 29, 110));
+        recStatus.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recStatusActionPerformed(evt);
+            }
+        });
+
+        recPayType.setEditable(false);
+        recPayType.setBackground(new java.awt.Color(255, 255, 204));
+        recPayType.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recPayType.setForeground(new java.awt.Color(0, 29, 110));
+        recPayType.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recPayType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recPayTypeActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel14.setText("Payment Type");
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel7.setText("Status ");
 
-        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
+        recSeat.setEditable(false);
+        recSeat.setBackground(new java.awt.Color(255, 255, 204));
+        recSeat.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        recSeat.setForeground(new java.awt.Color(0, 29, 110));
+        recSeat.setDisabledTextColor(new java.awt.Color(0, 29, 110));
+        recSeat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recSeatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1081, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13)
+                        .addGap(137, 137, 137)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(recDate, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(recDuration, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(recDepature)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(recOrigin)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(recCategory, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(recCode, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(recStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recDestination, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                            .addComponent(recArrival)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recPayType)
+                            .addComponent(recPrice)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(recSeat, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(recDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(recOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recDestination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recArrival, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recDepature))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(recDuration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recSeat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(recCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recPayType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(recPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(recStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -378,126 +460,25 @@ public class TicketRecord extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(recDepature, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(122, 122, 122))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(recCode, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(52, 52, 52)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(recSeat, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recDate)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recDestination)
-                            .addComponent(recArrival)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recStatus)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recPayType))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(recCode, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recDate, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(3, 3, 3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(recOrigin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(recDestination, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(recDepature, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(recArrival, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(7, 7, 7)
-                                .addComponent(recSeat, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(recDuration, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(recCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(recPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(recPayType, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(56, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(69, Short.MAX_VALUE)))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         pack();
@@ -540,50 +521,10 @@ public class TicketRecord extends javax.swing.JFrame {
         recPayType.setText(PayType);
     }//GEN-LAST:event_RecordTableMouseClicked
 
-    private void recOriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recOriginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recOriginActionPerformed
-
-    private void recDurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDurationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recDurationActionPerformed
-
-    private void recStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recStatusActionPerformed
-
-    private void recPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recPriceActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recPriceActionPerformed
-
     private void Back_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back_MenuActionPerformed
         new MainMenu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_Back_MenuActionPerformed
-
-    private void recCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recCodeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recCodeActionPerformed
-
-    private void recDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recDateActionPerformed
-
-    private void recPayTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recPayTypeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recPayTypeActionPerformed
-
-    private void recDepatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDepatureActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recDepatureActionPerformed
-
-    private void recArrivalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recArrivalActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recArrivalActionPerformed
-
-    private void recSeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recSeatActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_recSeatActionPerformed
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         // TODO add your handling code here:
@@ -594,6 +535,46 @@ public class TicketRecord extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setState(1);
     }//GEN-LAST:event_jLabel17MouseClicked
+
+    private void recSeatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recSeatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recSeatActionPerformed
+
+    private void recPayTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recPayTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recPayTypeActionPerformed
+
+    private void recStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recStatusActionPerformed
+
+    private void recArrivalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recArrivalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recArrivalActionPerformed
+
+    private void recDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recDateActionPerformed
+
+    private void recPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recPriceActionPerformed
+
+    private void recDurationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDurationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recDurationActionPerformed
+
+    private void recDepatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recDepatureActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recDepatureActionPerformed
+
+    private void recOriginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recOriginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recOriginActionPerformed
+
+    private void recCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recCodeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recCodeActionPerformed
 
     private void ReadRecord(){
         try{
@@ -693,7 +674,6 @@ public class TicketRecord extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField recArrival;
     private javax.swing.JTextField recCategory;

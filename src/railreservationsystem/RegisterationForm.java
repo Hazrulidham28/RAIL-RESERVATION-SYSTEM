@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static railreservationsystem.BuyTicket.jComboBoxTrainCode;
 
 /**
  *
@@ -20,12 +21,19 @@ public class RegisterationForm extends javax.swing.JFrame {
     public String Password;
     private boolean passData=true;
     public String status;
+    final String[] genderArray = new String[2];
+    
    
     /**
      * Creates new form RegisterationForm
      */
     public RegisterationForm() {
         initComponents();
+        
+        genderArray[0] = "Male";
+        genderArray[1] = "Female";
+        
+        jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Gender", "Male", "Female" }));
     }
   
 
@@ -43,28 +51,28 @@ public class RegisterationForm extends javax.swing.JFrame {
         jTextEmail = new javax.swing.JTextField();
         jTextName = new javax.swing.JTextField();
         jTextIc = new javax.swing.JTextField();
-        jTextGender = new javax.swing.JTextField();
         jTextContact = new javax.swing.JTextField();
         jLabelEmail = new javax.swing.JLabel();
         jLabelPass = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
         jLabelIc = new javax.swing.JLabel();
+        jButtonSubmit = new javax.swing.JButton();
+        jButtonClear = new javax.swing.JButton();
         jLabelGender = new javax.swing.JLabel();
         jLabelContact = new javax.swing.JLabel();
-        jButtonSubmit = new javax.swing.JButton();
         jPassword = new javax.swing.JTextField();
-        jButtonClear = new javax.swing.JButton();
         jRadioStudent = new javax.swing.JRadioButton();
         jRadioOKU = new javax.swing.JRadioButton();
         jRadioSenior = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
+        jComboBoxGender = new javax.swing.JComboBox<>();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
 
         jLabel3.setText("jLabel3");
 
@@ -100,14 +108,6 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jTextIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 270, 30));
 
-        jTextGender.setBackground(new java.awt.Color(254, 226, 197));
-        jTextGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextGenderActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 270, 30));
-
         jTextContact.setBackground(new java.awt.Color(254, 226, 197));
         getContentPane().add(jTextContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 270, 30));
 
@@ -131,16 +131,6 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabelIc.setText("Identity Card Number");
         getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 190, 20));
 
-        jLabelGender.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabelGender.setForeground(new java.awt.Color(0, 29, 110));
-        jLabelGender.setText("Gender");
-        getContentPane().add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, 20));
-
-        jLabelContact.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabelContact.setForeground(new java.awt.Color(0, 29, 110));
-        jLabelContact.setText("Contact Number");
-        getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 140, 20));
-
         jButtonSubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButtonSubmit.setForeground(new java.awt.Color(0, 29, 110));
         jButtonSubmit.setText("REGISTER");
@@ -151,14 +141,6 @@ public class RegisterationForm extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 430, 130, 40));
 
-        jPassword.setBackground(new java.awt.Color(254, 226, 197));
-        jPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
-
         jButtonClear.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButtonClear.setForeground(new java.awt.Color(0, 29, 110));
         jButtonClear.setText("CLEAR");
@@ -168,6 +150,24 @@ public class RegisterationForm extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 430, 130, 40));
+
+        jLabelGender.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelGender.setForeground(new java.awt.Color(0, 29, 110));
+        jLabelGender.setText("Gender");
+        getContentPane().add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 90, 20));
+
+        jLabelContact.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelContact.setForeground(new java.awt.Color(0, 29, 110));
+        jLabelContact.setText("Contact Number");
+        getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 140, 20));
+
+        jPassword.setBackground(new java.awt.Color(254, 226, 197));
+        jPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
 
         buttonGroup1.add(jRadioStudent);
         jRadioStudent.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -201,6 +201,24 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 29, 110));
         jLabel2.setText("Status");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 90, 20));
+
+        jComboBoxGender.setBackground(new java.awt.Color(254, 226, 197));
+        jComboBoxGender.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Gender", "Male", "Female" }));
+        jComboBoxGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxGenderActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 160, 270, 30));
+
+        jPanel3.setBackground(new java.awt.Color(0, 29, 110));
+        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 1000, 100));
+
+        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
+        jPanel2.setForeground(new java.awt.Color(0, 29, 110));
+        jPanel2.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(0, 29, 110));
 
@@ -260,14 +278,9 @@ public class RegisterationForm extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 80));
+        jPanel2.add(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(196, 221, 255));
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 480));
-
-        jPanel3.setBackground(new java.awt.Color(0, 29, 110));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 1000, 100));
 
         pack();
         setLocationRelativeTo(null);
@@ -287,7 +300,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         jPassword.setText("");
         jTextName.setText("");
         jTextIc.setText("");
-        jTextGender.setText("");
+        jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Gender", "Male", "Female" }));
         jTextContact.setText("");
         JOptionPane.showMessageDialog(null,"Successfully cleared!");
     }//GEN-LAST:event_jButtonClearActionPerformed
@@ -302,7 +315,10 @@ public class RegisterationForm extends javax.swing.JFrame {
         Password =jPassword.getText();
         Name = jTextName.getText();
         IcNum = jTextIc.getText();
-        Gender = jTextGender.getText();
+        if (jComboBoxGender.getSelectedIndex() == 1)
+            Gender = "Male";
+        else if(jComboBoxGender.getSelectedIndex() == 2)
+            Gender = "Female";
         Contact = jTextContact.getText();
         if(jRadioStudent.isSelected()){
             status="Student";
@@ -388,10 +404,6 @@ public class RegisterationForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
-    private void jTextGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextGenderActionPerformed
-
     private void jTextIcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIcActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextIcActionPerformed
@@ -415,6 +427,10 @@ public class RegisterationForm extends javax.swing.JFrame {
         this.setState(1);
         
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jComboBoxGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxGenderActionPerformed
 
     
     
@@ -458,6 +474,7 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonSubmit;
+    private javax.swing.JComboBox<String> jComboBoxGender;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -479,7 +496,6 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioStudent;
     private javax.swing.JTextField jTextContact;
     private javax.swing.JTextField jTextEmail;
-    private javax.swing.JTextField jTextGender;
     private javax.swing.JTextField jTextIc;
     public static javax.swing.JTextField jTextName;
     // End of variables declaration//GEN-END:variables

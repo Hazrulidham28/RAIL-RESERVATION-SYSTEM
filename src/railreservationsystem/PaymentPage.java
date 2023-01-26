@@ -64,6 +64,67 @@ public class PaymentPage extends javax.swing.JFrame {
          
         initComponents();
         
+        //based on ChooseSeat page
+        //CurrentSchedules.txt to get data
+        //get data train code, Origin, Destination
+        String filePath = "CurrentSchedules.txt";
+        //based on UserSeat page
+        //get data about Train Category, Price
+        String filePath2 = "UserSeat.txt";
+        File file1 = new File(filePath);
+        File file2 = new File(filePath2);
+        
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(file1));
+            
+            //Set the column's name 
+            String[] columnsName = {"Train Code","Origin","Destination","Train Cateogory","Fare"};
+            //set columns name to the jtable model
+            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
+            tableModel.setColumnIdentifiers(columnsName);
+             
+             
+            String input;
+           
+            while((input = br.readLine()) != null){
+                StringTokenizer st = new StringTokenizer(input,";");
+                    code = st.nextToken();
+                    date = st.nextToken();
+                    origin = st.nextToken();
+                    destination = st.nextToken();
+                    departure = st.nextToken();
+                    arrival = st.nextToken();
+                    duration = st.nextToken();
+                    pPlatinum = st.nextToken();
+                    pGold = st.nextToken();
+                
+             
+            }
+                
+            BufferedReader BR = new BufferedReader(new FileReader(file2));
+            String Input;
+            
+            while((Input = BR.readLine()) != null){
+                StringTokenizer ST = new StringTokenizer(Input, ";");
+                    trainCode = ST.nextToken();
+                    Seat = ST.nextToken();
+                    trainType = ST.nextToken();
+                    fare = ST.nextToken();
+                    
+                                
+            }
+            
+           String[] dataRow = {code,origin,destination};
+           String[] dataRow2 = {trainType, fare};
+           String[] AllData = {dataRow[0],dataRow[1],dataRow[2],dataRow2[0],dataRow2[1]};
+           tableModel.addRow(AllData);
+             
+
+        }   catch(Exception ex){
+            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex);
+            JOptionPane.showMessageDialog(null,"The details for your ticket does not exist.");
+        }
+        
     }
    
     
@@ -85,7 +146,6 @@ public class PaymentPage extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         panel3 = new java.awt.Panel();
         label2 = new java.awt.Label();
-        ShowDetailButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         panel5 = new java.awt.Panel();
@@ -159,15 +219,6 @@ public class PaymentPage extends javax.swing.JFrame {
         label2.setForeground(new java.awt.Color(254, 226, 197));
         label2.setText("ORDER/PAYMENT");
 
-        ShowDetailButton.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        ShowDetailButton.setForeground(new java.awt.Color(0, 29, 110));
-        ShowDetailButton.setText("SHOW DETAILS");
-        ShowDetailButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowDetailButtonActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(254, 226, 197));
         jLabel1.setText("X");
@@ -191,9 +242,7 @@ public class PaymentPage extends javax.swing.JFrame {
         panel3Layout.setHorizontalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 243, Short.MAX_VALUE)
+                .addContainerGap(443, Short.MAX_VALUE)
                 .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(300, 300, 300)
                 .addComponent(jLabel2)
@@ -205,13 +254,11 @@ public class PaymentPage extends javax.swing.JFrame {
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ShowDetailButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))))
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabel2)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -337,74 +384,6 @@ public class PaymentPage extends javax.swing.JFrame {
                 // TODO add your handling code here:
         //        setExtendedState(JFrame.MAXIMISED_BOTH);
     }//GEN-LAST:event_formWindowOpened
-
-    private void ShowDetailButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowDetailButtonActionPerformed
-        //based on ChooseSeat page
-        //CurrentSchedules.txt to get data
-        //get data train code, Origin, Destination
-        String filePath = "CurrentSchedules.txt";
-        //based on UserSeat page
-        //get data about Train Category, Price
-        String filePath2 = "UserSeat.txt";
-        File file1 = new File(filePath);
-        File file2 = new File(filePath2);
-        
-        try{
-            BufferedReader br = new BufferedReader(new FileReader(file1));
-            
-            //Set the column's name 
-            String[] columnsName = {"Train Code","Origin","Destination","Train Cateogory","Fare"};
-            //set columns name to the jtable model
-            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
-            tableModel.setColumnIdentifiers(columnsName);
-             
-             
-            String input;
-           
-            while((input = br.readLine()) != null){
-                StringTokenizer st = new StringTokenizer(input,";");
-                    code = st.nextToken();
-                    date = st.nextToken();
-                    origin = st.nextToken();
-                    destination = st.nextToken();
-                    departure = st.nextToken();
-                    arrival = st.nextToken();
-                    duration = st.nextToken();
-                    pPlatinum = st.nextToken();
-                    pGold = st.nextToken();
-                
-             
-            }
-                
-            BufferedReader BR = new BufferedReader(new FileReader(file2));
-            String Input;
-            
-            while((Input = BR.readLine()) != null){
-                StringTokenizer ST = new StringTokenizer(Input, ";");
-                    trainCode = ST.nextToken();
-                    Seat = ST.nextToken();
-                    trainType = ST.nextToken();
-                    fare = ST.nextToken();
-                    
-                                
-            }
-            
-           String[] dataRow = {code,origin,destination};
-           String[] dataRow2 = {trainType, fare};
-           String[] AllData = {dataRow[0],dataRow[1],dataRow[2],dataRow2[0],dataRow2[1]};
-           tableModel.addRow(AllData);
-             
-
-        }   catch(Exception ex){
-            Logger.getLogger(PaymentPage.class.getName()).log(Level.SEVERE,null,ex);
-            JOptionPane.showMessageDialog(null,"The details for your ticket does not exist.");
-        }
-        
-      
-     
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ShowDetailButtonActionPerformed
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
@@ -593,7 +572,6 @@ public class PaymentPage extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button CreditButton;
     private java.awt.Button OnlineBankButton;
-    private javax.swing.JButton ShowDetailButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
