@@ -106,6 +106,7 @@ public class AccDetails extends javax.swing.JFrame {
 
         jTextName.setEditable(false);
         jTextName.setBackground(new java.awt.Color(254, 226, 197));
+        jTextName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNameActionPerformed(evt);
@@ -118,6 +119,7 @@ public class AccDetails extends javax.swing.JFrame {
 
         jTextIc.setEditable(false);
         jTextIc.setBackground(new java.awt.Color(254, 226, 197));
+        jTextIc.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 29, 110));
@@ -153,6 +155,7 @@ public class AccDetails extends javax.swing.JFrame {
         });
 
         jTextContact.setBackground(new java.awt.Color(254, 226, 197));
+        jTextContact.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jTextContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextContactActionPerformed(evt);
