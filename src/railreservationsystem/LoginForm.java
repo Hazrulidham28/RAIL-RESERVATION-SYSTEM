@@ -45,6 +45,7 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm() {
         
         initComponents();
+        jTextInputPassword.setEchoChar('\u25cf');
        // setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
@@ -67,7 +68,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jTextInputEmail = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
-        jTextinputPassword = new javax.swing.JTextField();
+        jTextInputPassword = new javax.swing.JPasswordField();
         jButtonLogin = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -76,6 +77,7 @@ public class LoginForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 255));
@@ -151,7 +153,7 @@ public class LoginForm extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 998, -1));
 
         jTextInputEmail.setBackground(new java.awt.Color(254, 226, 197));
-        jTextInputEmail.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jTextInputEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jTextInputEmail.setBorder(null);
         jTextInputEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,24 +176,18 @@ public class LoginForm extends javax.swing.JFrame {
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 192, 420, -1));
 
-        jTextinputPassword.setBackground(new java.awt.Color(254, 226, 197));
-        jTextinputPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jTextinputPassword.setBorder(null);
-        jTextinputPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextinputPasswordActionPerformed(evt);
-            }
-        });
+        jTextInputPassword.setBackground(new java.awt.Color(254, 226, 197));
+        jTextInputPassword.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextinputPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+            .addComponent(jTextInputPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTextinputPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+            .addComponent(jTextInputPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
         );
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(324, 287, 420, -1));
@@ -262,6 +258,20 @@ public class LoginForm extends javax.swing.JFrame {
         });
         jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, 120, 30));
 
+        jToggleButton1.setText("Show");
+        jToggleButton1.setFocusable(false);
+        jToggleButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jToggleButton1MouseClicked(evt);
+            }
+        });
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 283, -1, 50));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,7 +291,7 @@ public class LoginForm extends javax.swing.JFrame {
        // TO store input from user to variable
         
         userInput = jTextInputEmail.getText();
-        userPass=jTextinputPassword.getText();
+        userPass=jTextInputPassword.getText();
         if(userInput.equals("") && userPass.equals("")){
             JOptionPane.showMessageDialog(null,"You must enter proper Email and Password!");
         }
@@ -312,10 +322,6 @@ public class LoginForm extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jTextInputEmailActionPerformed
 
-    private void jTextinputPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextinputPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextinputPasswordActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         ForgetPassword fp = new ForgetPassword();
@@ -340,6 +346,21 @@ public class LoginForm extends javax.swing.JFrame {
         reg.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jToggleButton1MouseClicked
+        if(jToggleButton1.isSelected()){
+            jTextInputPassword.setEchoChar((char)0);
+            jToggleButton1.setText("Hide");
+        }
+        else{
+            jTextInputPassword.setEchoChar('\u25cf');
+            jToggleButton1.setText("Show");
+        }
+    }//GEN-LAST:event_jToggleButton1MouseClicked
     //method to check the boolean value
     public void getAuthent(){
         //open file reader
@@ -358,13 +379,28 @@ public class LoginForm extends javax.swing.JFrame {
                 st = new StringTokenizer(input,delims);
                 
                 while(st.hasMoreTokens()){
-                Email=st.nextToken();
-                Password=st.nextToken();
-                Name=st.nextToken();
-                IcNum=st.nextToken();
-                Gender=st.nextToken();
-                Contact=st.nextToken();
-                status=st.nextToken();
+                    
+                    Email=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Password=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Name=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    IcNum=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Gender=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Contact=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    status=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
                 
                 }
                /* to check whether variable has the correct data 
@@ -393,7 +429,7 @@ public class LoginForm extends javax.swing.JFrame {
         
         
     }
-    
+  
     public void setCustomerdata(){
     
         try {
@@ -411,12 +447,7 @@ public class LoginForm extends javax.swing.JFrame {
                 outFile.println(Currstatus+";");
                 //outFile.println();
                 
-              
-                
                 outFile.close();
-                
-                
-                
                 
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
@@ -424,8 +455,7 @@ public class LoginForm extends javax.swing.JFrame {
                 Logger.getLogger(RegisterationForm.class.getName()).log(Level.SEVERE, null, ex);
             }
     
-    }
-    
+    }    
     
     /**
      * @param args the command line arguments
@@ -485,7 +515,8 @@ public class LoginForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextInputEmail;
-    private javax.swing.JTextField jTextinputPassword;
+    private javax.swing.JPasswordField jTextInputPassword;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
     

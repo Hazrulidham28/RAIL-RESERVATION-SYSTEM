@@ -1,1 +1,1 @@
-T4;25/4/2023;Batang Melaka;Ipoh;18:57;23:52;4h 55m;C2;Platinum;Senior Citizen;RM 45.60;Online Bank;
+T5;14/5/2023;Tapah Road;Butterworth;19:58;22:22;2h 24m;B3;Gold;Senior Citizen;RM 33.15;Online Bank;

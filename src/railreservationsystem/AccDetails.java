@@ -29,8 +29,15 @@ public class AccDetails extends javax.swing.JFrame {
     private String Gender;
     private String Contact;
     private String status;
-    private String InputEmail;
+    private String InputIC;
+    private String newName;
+    private String newIC;
+    private String newContact;
+    private String newEmail;
+    private String newGender;
     private String newPass;
+    
+    
     private String currmail;
     private String currpass;
     private String currname;
@@ -45,8 +52,9 @@ public class AccDetails extends javax.swing.JFrame {
      */
     public AccDetails() {
         initComponents();
+        readUserData();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,14 +79,12 @@ public class AccDetails extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextEmail = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jRadioButtonmale = new javax.swing.JRadioButton();
-        jRadioButtonFemale = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jButtonsubmit = new javax.swing.JButton();
-        jButtonLoad = new javax.swing.JButton();
-        jPasswordold = new javax.swing.JTextField();
+        jTextContact = new javax.swing.JTextField();
         jPasswordnew = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jTextGender = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -98,23 +104,31 @@ public class AccDetails extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 29, 110));
         jLabel2.setText("Name");
 
+        jTextName.setEditable(false);
         jTextName.setBackground(new java.awt.Color(254, 226, 197));
+        jTextName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextNameActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 29, 110));
         jLabel3.setText("MyKad No");
 
+        jTextIc.setEditable(false);
         jTextIc.setBackground(new java.awt.Color(254, 226, 197));
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 29, 110));
-        jLabel4.setText("Password");
+        jLabel4.setText("Contact");
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 29, 110));
         jLabel5.setText("Email");
 
         jTextEmail.setBackground(new java.awt.Color(254, 226, 197));
+        jTextEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jTextEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextEmailActionPerformed(evt);
@@ -125,29 +139,9 @@ public class AccDetails extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 29, 110));
         jLabel6.setText("Gender");
 
-        buttonGroup2.add(jRadioButtonmale);
-        jRadioButtonmale.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jRadioButtonmale.setForeground(new java.awt.Color(0, 29, 110));
-        jRadioButtonmale.setText("Male");
-        jRadioButtonmale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonmaleActionPerformed(evt);
-            }
-        });
-
-        buttonGroup2.add(jRadioButtonFemale);
-        jRadioButtonFemale.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jRadioButtonFemale.setForeground(new java.awt.Color(0, 29, 110));
-        jRadioButtonFemale.setText("Female");
-        jRadioButtonFemale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonFemaleActionPerformed(evt);
-            }
-        });
-
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 29, 110));
-        jLabel7.setText("New Password");
+        jLabel7.setText("Password");
 
         jButtonsubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButtonsubmit.setForeground(new java.awt.Color(0, 29, 110));
@@ -158,23 +152,15 @@ public class AccDetails extends javax.swing.JFrame {
             }
         });
 
-        jButtonLoad.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jButtonLoad.setForeground(new java.awt.Color(0, 29, 110));
-        jButtonLoad.setText("Load");
-        jButtonLoad.addActionListener(new java.awt.event.ActionListener() {
+        jTextContact.setBackground(new java.awt.Color(254, 226, 197));
+        jTextContact.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLoadActionPerformed(evt);
-            }
-        });
-
-        jPasswordold.setBackground(new java.awt.Color(254, 226, 197));
-        jPasswordold.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordoldActionPerformed(evt);
+                jTextContactActionPerformed(evt);
             }
         });
 
         jPasswordnew.setBackground(new java.awt.Color(254, 226, 197));
+        jPasswordnew.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         jButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 29, 110));
@@ -185,41 +171,41 @@ public class AccDetails extends javax.swing.JFrame {
             }
         });
 
+        jTextGender.setEditable(false);
+        jTextGender.setBackground(new java.awt.Color(254, 226, 197));
+        jTextGender.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jTextGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextGenderActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(156, 156, 156)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordold, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel3)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextContact, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jRadioButtonmale)
-                            .addGap(18, 18, 18)
-                            .addComponent(jRadioButtonFemale)
-                            .addContainerGap(255, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButtonsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7)
-                                .addComponent(jPasswordnew, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel6)
-                                .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5)))
-                        .addContainerGap())))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButtonsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5)))
+                    .addComponent(jLabel7)
+                    .addComponent(jPasswordnew, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextGender, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(174, 174, 174))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,33 +218,30 @@ public class AccDetails extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextName, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonmale)
-                    .addComponent(jRadioButtonFemale)
-                    .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextIc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextGender, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jLabel7))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordold, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextContact, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPasswordnew, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButtonLoad, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(56, 56, 56)
+                        .addComponent(jButtonsubmit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(45, 45, 45)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(363, Short.MAX_VALUE))
         );
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon&Pics/logo1.png"))); // NOI18N
@@ -312,9 +295,9 @@ public class AccDetails extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jLabel1)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
+                .addGap(131, 131, 131))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -325,26 +308,20 @@ public class AccDetails extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 592, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jRadioButtonmaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonmaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonmaleActionPerformed
-
     private void jTextEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextEmailActionPerformed
 
-    private void jRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonFemaleActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButtonFemaleActionPerformed
-
     private void jButtonsubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonsubmitActionPerformed
+        newContact=jTextContact.getText();
+        newEmail=jTextEmail.getText();
         newPass=jPasswordnew.getText();
         
         //update latest data to user.txt
@@ -353,36 +330,15 @@ public class AccDetails extends javax.swing.JFrame {
         //update latest data to currentuser.txt
         //create obj from class login form
         
-        LoginForm lg = new LoginForm(currmail,currpass,currname,curric,currgender,currcontact,currstat);
+        LoginForm lg = new LoginForm(newEmail,newPass,Name,IcNum,Gender,newContact,status);
        //update new customer data into currentuser.txt
         lg.setCustomerdata();
         
-     
-       
     }//GEN-LAST:event_jButtonsubmitActionPerformed
 
-    private void jButtonLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoadActionPerformed
+    private void jTextContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextContactActionPerformed
         // TODO add your handling code here:
-        readUserData();
-        if(Gender.equals("male")){
-            jRadioButtonmale.setSelected(true);
-        }
-        else{
-            jRadioButtonFemale.setSelected(true);
-        }
-        
-        
-        jTextName.setText(Name);
-        jTextIc.setText(IcNum);
-        jTextEmail.setText(Email);
-        jPasswordold.setText(Password);
-        
-       
-    }//GEN-LAST:event_jButtonLoadActionPerformed
-
-    private void jPasswordoldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordoldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordoldActionPerformed
+    }//GEN-LAST:event_jTextContactActionPerformed
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
@@ -401,6 +357,14 @@ public class AccDetails extends javax.swing.JFrame {
         menu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
+        
+    }//GEN-LAST:event_jTextNameActionPerformed
+
+    private void jTextGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextGenderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextGenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -449,7 +413,6 @@ public class AccDetails extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButtonLoad;
     private javax.swing.JButton jButtonsubmit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -464,10 +427,9 @@ public class AccDetails extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jPasswordnew;
-    private javax.swing.JTextField jPasswordold;
-    private javax.swing.JRadioButton jRadioButtonFemale;
-    private javax.swing.JRadioButton jRadioButtonmale;
+    private javax.swing.JTextField jTextContact;
     private javax.swing.JTextField jTextEmail;
+    private javax.swing.JTextField jTextGender;
     private javax.swing.JTextField jTextIc;
     private javax.swing.JTextField jTextName;
     // End of variables declaration//GEN-END:variables
@@ -489,6 +451,7 @@ public class AccDetails extends javax.swing.JFrame {
                 st = new StringTokenizer(input,delims);
                 
                 while(st.hasMoreTokens()){
+                    
                 Email=st.nextToken();
                 Password=st.nextToken();
                 Name=st.nextToken();
@@ -497,26 +460,29 @@ public class AccDetails extends javax.swing.JFrame {
                 Contact=st.nextToken();
                 status=st.nextToken();
                 
-                }
-               
+                jTextName.setText(Name);
+                jTextIc.setText(IcNum);
+                jTextEmail.setText(Email);
+                jTextContact.setText(Contact);
+                jPasswordnew.setText(Password);
+                jTextGender.setText(Gender);
+                
+            }
                 
                 
             }
             in.close();
-           InputEmail=Email;
-           
+            
+            InputIC = IcNum;
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LoginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        
-        
-    }
+       
+ }
  
  public void UpdateAcc() {
-     
-        
         FileReader fr;
         FileWriter fw;
         PrintWriter pr;
@@ -535,24 +501,38 @@ public class AccDetails extends javax.swing.JFrame {
                 st = new StringTokenizer(input,delims);
                 
                 while(st.hasMoreTokens()){
-                Email=st.nextToken();
-                Password=st.nextToken();
-                Name=st.nextToken();
-                IcNum=st.nextToken();
-                Gender=st.nextToken();
-                Contact=st.nextToken();
-                status=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Email=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Password=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Name=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    IcNum=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Gender=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    Contact=st.nextToken();
+                    if (!st.hasMoreElements()) 
+                        break;
+                    status=st.nextToken();
                 }
                 //if email that user input is equals like in file, it will replace new password into temp file
-                if(InputEmail.equals(Email)){
-                pr.print(Email+";");
+                if(InputIC.equals(IcNum)){
+                pr.print(newEmail+";");
                 pr.print(newPass+";");
                 pr.print(Name+";");
                 pr.print(IcNum+";");
                 pr.print(Gender+";");
-                pr.print(Contact+";");
+                pr.print(newContact+";");
                 pr.println(status+";");
-                currmail=Email;currpass=newPass;currname=Name;curric=IcNum;currgender=Gender;currcontact=Contact;currstat=status; 
+                //currmail=newEmail;currpass=newPass;currname=Name;curric=IcNum;currgender=Gender;currcontact=newContact;currstat=status; 
                 }
                 //if email that user input is not equal, it will copy to temp file
                 else{

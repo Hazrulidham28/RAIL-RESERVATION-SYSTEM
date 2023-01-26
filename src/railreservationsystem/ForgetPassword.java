@@ -82,13 +82,19 @@ public class ForgetPassword extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 29, 110));
         jLabel2.setText("Email");
 
+        jTextEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 29, 110));
         jLabel3.setText("IC Number");
 
+        jTextIc.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 29, 110));
         jLabel4.setText("New Password");
+
+        jTextNewPass.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

@@ -35,6 +35,12 @@ public class ChooseSeat extends javax.swing.JFrame {
     private String userCategory;
     private String userStatus;
     private double latestPrice;
+    String email;
+    String password;
+    String name;
+    String icNum;
+    String Gender;
+    String Contact;
     DecimalFormat dc = new DecimalFormat("RM 0.00");
     
     String va1;
@@ -52,6 +58,7 @@ public class ChooseSeat extends javax.swing.JFrame {
     public ChooseSeat() {
         initComponents();
         FileReader fr;
+        readStatus();
        
        try {
             fr = new FileReader("CurrentSchedules.txt");
@@ -387,6 +394,32 @@ public class ChooseSeat extends javax.swing.JFrame {
         }
     }
     
+    public void readStatus(){
+        try {
+            FileReader readSchedule = new FileReader("currentuser.txt");
+            BufferedReader br = new BufferedReader(readSchedule);
+            
+            String input;
+            while((input = br.readLine() ) != null)
+                {
+                    StringTokenizer st = new StringTokenizer (input,";");
+                    
+                    email = st.nextToken();
+                    password = st.nextToken();
+                    name = st.nextToken();
+                    icNum = st.nextToken();
+                    Gender = st.nextToken();
+                    Contact = st.nextToken();
+                    userStatus = st.nextToken();
+                    
+                    jStatus.setText(userStatus);
+                }
+                readSchedule.close();
+        }
+        catch(Exception ex){
+            System.out.println(ex);}
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -397,6 +430,8 @@ public class ChooseSeat extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
+        jChooseSeat1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -414,9 +449,19 @@ public class ChooseSeat extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         chooseCategory = new javax.swing.JComboBox<>();
         Proceed = new javax.swing.JButton();
+        jStatus = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel4.setText("Enter Category");
+
+        jChooseSeat1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jChooseSeat1.setOpaque(true);
+        jChooseSeat1.setPreferredSize(new java.awt.Dimension(117, 22));
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 29, 110));
+        jLabel5.setText("Seat");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -466,12 +511,10 @@ public class ChooseSeat extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, -1));
@@ -608,6 +651,14 @@ public class ChooseSeat extends javax.swing.JFrame {
             }
         });
 
+        jStatus.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jStatus.setOpaque(true);
+        jStatus.setPreferredSize(new java.awt.Dimension(117, 22));
+
+        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 29, 110));
+        jLabel8.setText("Status");
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -615,15 +666,17 @@ public class ChooseSeat extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap(152, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel8))
+                .addGap(29, 29, 29)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(chooseCategory, 0, 156, Short.MAX_VALUE)
+                    .addComponent(jChooseSeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(140, 140, 140)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(chooseCategory, 0, 156, Short.MAX_VALUE)
-                            .addComponent(jChooseSeat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(140, 140, 140)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(115, 115, 115))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
@@ -636,16 +689,22 @@ public class ChooseSeat extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addComponent(Proceed, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jChooseSeat, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(chooseCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(Proceed, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(chooseCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(51, 51, 51))
         );
 
@@ -674,13 +733,14 @@ public class ChooseSeat extends javax.swing.JFrame {
                 {
                     StringTokenizer st = new StringTokenizer (input,";");
                     
-                    String email = st.nextToken();
-                    String password = st.nextToken();
-                    String name = st.nextToken();
-                    String icNum = st.nextToken();
-                    String Gender = st.nextToken();
-                    String Contact = st.nextToken();
+                    email = st.nextToken();
+                    password = st.nextToken();
+                    name = st.nextToken();
+                    icNum = st.nextToken();
+                    Gender = st.nextToken();
+                    Contact = st.nextToken();
                     userStatus = st.nextToken();
+                    
                 }
                 readSchedule.close();
         }
@@ -905,14 +965,18 @@ public class ChooseSeat extends javax.swing.JFrame {
     private javax.swing.JButton b3;
     private javax.swing.JComboBox<String> chooseCategory;
     private javax.swing.JLabel jChooseSeat;
+    private javax.swing.JLabel jChooseSeat1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JLabel jStatus;
     // End of variables declaration//GEN-END:variables
 }

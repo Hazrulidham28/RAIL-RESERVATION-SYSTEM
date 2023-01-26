@@ -1,1 +1,1 @@
-T4;C2;Platinum;RM 45.60;
+T5;B3;Gold;RM 33.15;

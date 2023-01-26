@@ -48,22 +48,19 @@ public class RegisterationForm extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel3 = new javax.swing.JLabel();
-        jTextEmail = new javax.swing.JTextField();
         jTextName = new javax.swing.JTextField();
-        jTextIc = new javax.swing.JTextField();
+        jTextEmail = new javax.swing.JTextField();
+        jTextPass = new javax.swing.JTextField();
         jTextContact = new javax.swing.JTextField();
-        jLabelEmail = new javax.swing.JLabel();
-        jLabelPass = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
         jLabelIc = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelPass = new javax.swing.JLabel();
         jButtonSubmit = new javax.swing.JButton();
         jButtonClear = new javax.swing.JButton();
         jLabelGender = new javax.swing.JLabel();
         jLabelContact = new javax.swing.JLabel();
-        jPassword = new javax.swing.JTextField();
-        jRadioStudent = new javax.swing.JRadioButton();
-        jRadioOKU = new javax.swing.JRadioButton();
-        jRadioSenior = new javax.swing.JRadioButton();
+        jTextIc = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jComboBoxGender = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
@@ -73,6 +70,11 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioOKU = new javax.swing.JRadioButton();
+        jRadioSenior = new javax.swing.JRadioButton();
+        jRadioStudent = new javax.swing.JRadioButton();
 
         jLabel3.setText("jLabel3");
 
@@ -84,52 +86,56 @@ public class RegisterationForm extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextEmail.setBackground(new java.awt.Color(254, 226, 197));
-        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextEmailActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
-
         jTextName.setBackground(new java.awt.Color(254, 226, 197));
+        jTextName.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jTextName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextNameActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
+        getContentPane().add(jTextName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 270, 30));
 
-        jTextIc.setBackground(new java.awt.Color(254, 226, 197));
-        jTextIc.addActionListener(new java.awt.event.ActionListener() {
+        jTextEmail.setBackground(new java.awt.Color(254, 226, 197));
+        jTextEmail.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jTextEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextIcActionPerformed(evt);
+                jTextEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 270, 30));
+        getContentPane().add(jTextEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 270, 30));
+
+        jTextPass.setBackground(new java.awt.Color(254, 226, 197));
+        jTextPass.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jTextPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextPassActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 340, 270, 30));
 
         jTextContact.setBackground(new java.awt.Color(254, 226, 197));
+        jTextContact.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         getContentPane().add(jTextContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, 270, 30));
-
-        jLabelEmail.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabelEmail.setForeground(new java.awt.Color(0, 29, 110));
-        jLabelEmail.setText("Email");
-        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 30));
-
-        jLabelPass.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
-        jLabelPass.setForeground(new java.awt.Color(0, 29, 110));
-        jLabelPass.setText("Password");
-        getContentPane().add(jLabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 100, 20));
 
         jLabelName.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabelName.setForeground(new java.awt.Color(0, 29, 110));
         jLabelName.setText("Name");
-        getContentPane().add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 90, 20));
+        getContentPane().add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 90, 30));
 
         jLabelIc.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabelIc.setForeground(new java.awt.Color(0, 29, 110));
         jLabelIc.setText("Identity Card Number");
-        getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 190, 20));
+        getContentPane().add(jLabelIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 200, 200, 20));
+
+        jLabelEmail.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelEmail.setForeground(new java.awt.Color(0, 29, 110));
+        jLabelEmail.setText("Email");
+        getContentPane().add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 90, 20));
+
+        jLabelPass.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
+        jLabelPass.setForeground(new java.awt.Color(0, 29, 110));
+        jLabelPass.setText("Password");
+        getContentPane().add(jLabelPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 320, 190, 20));
 
         jButtonSubmit.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jButtonSubmit.setForeground(new java.awt.Color(0, 29, 110));
@@ -161,41 +167,14 @@ public class RegisterationForm extends javax.swing.JFrame {
         jLabelContact.setText("Contact Number");
         getContentPane().add(jLabelContact, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 200, 140, 20));
 
-        jPassword.setBackground(new java.awt.Color(254, 226, 197));
-        jPassword.addActionListener(new java.awt.event.ActionListener() {
+        jTextIc.setBackground(new java.awt.Color(254, 226, 197));
+        jTextIc.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jTextIc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordActionPerformed(evt);
+                jTextIcActionPerformed(evt);
             }
         });
-        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
-
-        buttonGroup1.add(jRadioStudent);
-        jRadioStudent.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jRadioStudent.setForeground(new java.awt.Color(0, 29, 110));
-        jRadioStudent.setText("Student");
-        jRadioStudent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioStudentActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioStudent, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 290, 120, 30));
-
-        buttonGroup1.add(jRadioOKU);
-        jRadioOKU.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jRadioOKU.setForeground(new java.awt.Color(0, 29, 110));
-        jRadioOKU.setText("OKU");
-        jRadioOKU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioOKUActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioOKU, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 320, 100, 30));
-
-        buttonGroup1.add(jRadioSenior);
-        jRadioSenior.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jRadioSenior.setForeground(new java.awt.Color(0, 29, 110));
-        jRadioSenior.setText("Senior Citizen");
-        getContentPane().add(jRadioSenior, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 150, 30));
+        getContentPane().add(jTextIc, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 270, 30));
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 29, 110));
@@ -203,7 +182,7 @@ public class RegisterationForm extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, 90, 20));
 
         jComboBoxGender.setBackground(new java.awt.Color(254, 226, 197));
-        jComboBoxGender.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jComboBoxGender.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Gender", "Male", "Female" }));
         jComboBoxGender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,6 +259,81 @@ public class RegisterationForm extends javax.swing.JFrame {
 
         jPanel2.add(jPanel1);
 
+        jPanel4.setBackground(new java.awt.Color(196, 221, 255));
+
+        jRadioButton1.setBackground(new java.awt.Color(196, 221, 255));
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioButton1.setForeground(new java.awt.Color(0, 29, 110));
+        jRadioButton1.setText("Normal");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        jRadioOKU.setBackground(new java.awt.Color(196, 221, 255));
+        buttonGroup1.add(jRadioOKU);
+        jRadioOKU.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioOKU.setForeground(new java.awt.Color(0, 29, 110));
+        jRadioOKU.setText("OKU");
+        jRadioOKU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioOKUActionPerformed(evt);
+            }
+        });
+
+        jRadioSenior.setBackground(new java.awt.Color(196, 221, 255));
+        buttonGroup1.add(jRadioSenior);
+        jRadioSenior.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioSenior.setForeground(new java.awt.Color(0, 29, 110));
+        jRadioSenior.setText("Senior Citizen");
+
+        jRadioStudent.setBackground(new java.awt.Color(196, 221, 255));
+        buttonGroup1.add(jRadioStudent);
+        jRadioStudent.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jRadioStudent.setForeground(new java.awt.Color(0, 29, 110));
+        jRadioStudent.setText("Student");
+        jRadioStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioStudentActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(376, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jRadioButton1)
+                        .addGap(60, 60, 60))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jRadioStudent)
+                        .addGap(57, 57, 57)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioSenior)
+                    .addComponent(jRadioOKU))
+                .addGap(48, 48, 48))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(206, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioOKU, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioStudent, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(159, 159, 159))
+        );
+
+        jPanel2.add(jPanel4);
+
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 480));
 
         pack();
@@ -296,23 +350,23 @@ public class RegisterationForm extends javax.swing.JFrame {
 
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
         // TODO add your handling code here:
-        jTextEmail.setText("");
-        jPassword.setText("");
         jTextName.setText("");
         jTextIc.setText("");
+        jTextEmail.setText("");
+        jTextPass.setText("");
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Gender", "Male", "Female" }));
         jTextContact.setText("");
         JOptionPane.showMessageDialog(null,"Successfully cleared!");
     }//GEN-LAST:event_jButtonClearActionPerformed
 
-    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordActionPerformed
+    private void jTextIcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordActionPerformed
+    }//GEN-LAST:event_jTextIcActionPerformed
 
     private void jButtonSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubmitActionPerformed
         // to receive input from text dialog and input to variable;
         Email = jTextEmail.getText();
-        Password =jPassword.getText();
+        Password =jTextPass.getText();
         Name = jTextName.getText();
         IcNum = jTextIc.getText();
         if (jComboBoxGender.getSelectedIndex() == 1)
@@ -326,9 +380,11 @@ public class RegisterationForm extends javax.swing.JFrame {
         else if(jRadioOKU.isSelected()){
             status="OKU";
         }
-        else{
+        else if(jRadioSenior.isSelected()){
             status="Senior Citizen";
         }
+        else
+            status="Normal";
 
         //This if else state is to give prompt message if user not give any value and will return false value
         if(Email.equals("")){
@@ -404,17 +460,17 @@ public class RegisterationForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButtonSubmitActionPerformed
 
-    private void jTextIcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIcActionPerformed
+    private void jTextPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextIcActionPerformed
-
-    private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNameActionPerformed
+    }//GEN-LAST:event_jTextPassActionPerformed
 
     private void jTextEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextEmailActionPerformed
+
+    private void jTextNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextNameActionPerformed
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
@@ -431,6 +487,10 @@ public class RegisterationForm extends javax.swing.JFrame {
     private void jComboBoxGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxGenderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxGenderActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     
     
@@ -490,13 +550,15 @@ public class RegisterationForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jPassword;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioOKU;
     private javax.swing.JRadioButton jRadioSenior;
     private javax.swing.JRadioButton jRadioStudent;
     private javax.swing.JTextField jTextContact;
-    private javax.swing.JTextField jTextEmail;
+    public static javax.swing.JTextField jTextEmail;
     private javax.swing.JTextField jTextIc;
-    public static javax.swing.JTextField jTextName;
+    private javax.swing.JTextField jTextName;
+    private javax.swing.JTextField jTextPass;
     // End of variables declaration//GEN-END:variables
 }
