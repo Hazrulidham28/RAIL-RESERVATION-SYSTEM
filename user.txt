@@ -1,0 +1,13 @@
+HazrulAm@gmail.com;Hazrul123;Idham;0109102233;male;0187633434;Student;
+AlifSafwan@gmail.com;Aliflovedilah;Alif Safwan;020334025522;male;0174537654;Student;
+Najminxvir@gmail.com;nzvir123;Najmi;020345027766;male;0154342765;Senior Citizen;
+AbdHadi@gmail.com;abdhadi1;Hadi;028765026543;male;0175435643;Student;
+NurLina@gmail.com;Lina123;Lina;020454110745;male;0165435676;Senior Citizen;
+amiraira2002@gmail.com;mira;020626140346;Female;01163326072;Senior Citizen;Senior Citizen;
+mir@gmail.com;123;mir;020626140346;Female;01163326072;Senior Citizen;
+2021899762@student.uitm.edu.my;123;Amira Athirah;020626140346;Female;01163326072;Student;
+husnaAmira23@gmail.com;1234;husna;000;Female;999;Student;
+ldfidif;23213;farah;32432;Female;3432432;Senior Citizen;
+tasnim647@gmail.com;linailiya;Nur Tasnim binti Ghafar;032536236161;Female;0123233232;Student;
+iya;test;asam;019299232121;Male;21321;Normal;
+mira23@gmail.com;mirarare;Amira Soleh;010223061595;Female;0123256524;Senior Citizen;

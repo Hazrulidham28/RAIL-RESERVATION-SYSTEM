@@ -1,0 +1,5 @@
+T1;2/3/2023;KL Sentral;Tapah Road;14:30;16:34;2h 4m;25.00;32.00;
+T2;15/3/2023;Sungai Petani;Rawang;11:33;15:20;3h 47m;49.00;56.00;
+T3;7/4/2023;Gemas;Padang Besar;08:05;16:33;8h 28m;90.00;97.00;
+T4;25/4/2023;Batang Melaka;Ipoh;18:57;23:52;4h 55m;48.00;55.00;
+T5;14/5/2023;Tapah Road;Butterworth;19:58;22:22;2h 24m;32.00;39.00;
